@@ -1,5 +1,4 @@
-﻿using Kelompok01.MVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,13 +16,19 @@ using System.Windows.Shapes;
 namespace Kelompok01.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for AnimeInfoView.xaml
+    /// Interaction logic for UserProfileView.xaml
     /// </summary>
-    public partial class AnimeInfoView : UserControl
+    public partial class UserProfileView : UserControl
     {
-        public AnimeInfoView()
+        public UserProfileView()
         {
             InitializeComponent();
+            setUserProfile();
+        }
+
+        private void setUserProfile()
+        {
+            UserName.Content = "User Name";
         }
     }
 }

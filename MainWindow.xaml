@@ -9,7 +9,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip"
-        MinHeight="400" MinWidth="600"
+        MinHeight="540" MinWidth="960"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="720" Width="1280"
         Background="#222222">
@@ -35,8 +35,8 @@
                     VerticalAlignment="Center"
                     Margin="0,0,6,0"
                     Orientation="Horizontal">
-            <Button Width="18" Height="18"
-                    Margin="0,0,0,0"
+            <Button x:Name="Button1"
+                    Width="18" Height="18"
                     Style="{StaticResource RoundedButton}"
                     Click="MinimizeButton_Click"
                     Background="#59BD50"
@@ -61,24 +61,45 @@
                FontSize="32"
                Foreground="White"/>
 
-        <StackPanel Grid.Row="2">
-            <RadioButton Content="Home"
+        <Grid Grid.Row="2"
+              Margin="40,0,40,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel>
+            <RadioButton Height="40"
+                         Content="Home"
                          Margin="10"
                          Style="{StaticResource MenuButtonStyle}"
                          IsChecked="True"
                          Command="{Binding HomeViewCommand}"/>
-            <RadioButton Content="Search"
+                <RadioButton Height="40"
+                             Content="Search"
                          Margin="10"
                          Style="{StaticResource MenuButtonStyle}"
                          Command="{Binding SearchViewCommand}"/>
-            <RadioButton Content="History"
+                <RadioButton Height="40"
+                             Content="History"
                          Margin="10"
                          Style="{StaticResource MenuButtonStyle}"
                          Command="{Binding HistoryViewCommand}"/>
-            <RadioButton Content="Setting"
+                <RadioButton Height="40"
+                             Content="Setting"
                          Margin="10"
                          Style="{StaticResource MenuButtonStyle}"/>
-        </StackPanel>
+            </StackPanel>
+
+            <RadioButton Grid.Row="2"
+                         Content="NowPlaying"
+                         Margin="10"
+                         Style="{StaticResource MenuButtonStyle}"/>
+        </Grid>
+
+        
 
         <Grid Grid.Column="1"
               Grid.Row="1">
@@ -101,16 +122,17 @@
                          Style="{StaticResource SearchBoxStyle}"/>
             </Grid>
 
-            <Button Grid.Column="1"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Width="40" Height="40"
-                    Margin="6,0,0,0"
-                    Style="{StaticResource RoundedButton}">
-                <Button.Background>
+            <RadioButton Grid.Column="1"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Width="50" Height="50"
+                         Style="{StaticResource MenuButtonStyle}"
+                         Command="{Binding UserProfileViewCommand}">
+                <RadioButton.Background>
                     <ImageBrush ImageSource="/Image/pp.jpg"/>
-                </Button.Background>
-            </Button>
+                </RadioButton.Background>
+            </RadioButton>
+
         </Grid>
 
         <UserControl Grid.Column="1"

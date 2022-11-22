@@ -4,84 +4,102 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kelompok01.MVVM.View"
+             xmlns:viewModel="clr-namespace:Kelompok01.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1040">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="380*"/>
-            <ColumnDefinition Width="660*"/>
-        </Grid.ColumnDefinitions>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <Rectangle Width="300" Height="450"
-                       VerticalAlignment="Stretch"
-                       HorizontalAlignment="Stretch"
-                       Margin="0,40,0,0">
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/Image/a1.jpg"/>
-                </Rectangle.Fill>
-            </Rectangle>
+    <UserControl.DataContext>
+        <viewModel:HomeViewModel/>
+    </UserControl.DataContext>
 
-            <Button Grid.Row="1"
-                    Margin="40,10,40,10"
-                    Content="Watch">
-                
-            </Button>
+    <Grid Background="#222222">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        </Grid>
+        <Button x:Name="BackButton"
+                Width="80" Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="40,0,0,0"
+                Command="{Binding NewAnimeViewCommand}"/>
 
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Margin="40,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="780*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="360*"/>
+                    <RowDefinition Height="160*"/>
+                </Grid.RowDefinitions>
 
-            <Label Content="Chainsaw Man"
-                   FontFamily="/Font/#NTR"
-                   FontSize="32"
-                   Foreground="White"
-                   Margin="0,40,0,0"/>
+                <Rectangle Width="240" Height="360"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="/Image/a1.jpg"/>
+                    </Rectangle.Fill>
+                </Rectangle>
 
-            <TextBlock Grid.Row="1"
+                <Button Grid.Row="1"
+                        Width="240" Height="50"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="0,20,0,0"
+                        Content="Watch">
+
+                </Button>
+
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="20,0,40,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Chainsaw Man"
+                       FontFamily="/Font/#NTR"
+                       FontSize="32"
+                       Foreground="White"
+                       VerticalAlignment="Top"/>
+
+                <TextBlock Grid.Row="1"
                        Foreground="White"
                        FontFamily="/Font/#NTR"
                        FontSize="16"
                        TextWrapping="Wrap">
                 Denji is robbed of a normal teenage life, left with nothing but his deadbeat father's overwhelming debt. His only companion is his pet, the chainsaw devil Pochita, with whom he slays devils for money that inevitably ends up in the yakuza's pockets. All Denji can do is dream of a good, simple life: one with delicious food and a beautiful girlfriend by his side. But an act of greedy betrayal by the yakuza leads to Denji's brutal, untimely death, crushing all hope of him ever achieving happiness.
 
-            </TextBlock>
+                </TextBlock>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <Label Content="Rating"
+                    <Label Content="Rating"
                        FontFamily="/Font/#NTR"
                        FontSize="32"
                        Foreground="White"
                        VerticalAlignment="Center"/>
 
-                <Label Grid.Column="1"
+                    <Label Grid.Column="1"
                        Content="Popularity"
                        FontFamily="/Font/#NTR"
                        FontSize="32"
                        Foreground="White"
                        VerticalAlignment="Center"/>
 
+                </Grid>
             </Grid>
-            
-
         </Grid>
-        
-        
     </Grid>
 </UserControl>

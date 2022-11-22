@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="/Style/MenuButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Style/SearchBoxStyle.xaml"/>
                 <ResourceDictionary Source="/Style/RoundedButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Style/AnimeButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate  DataType="{x:Type viewModel:HomeViewModel}">
@@ -22,8 +23,14 @@
             <DataTemplate DataType="{x:Type viewModel:HistoryViewModel}">
                 <view:HistoryView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:NewAnimeViewModel}">
+                <view:NewAnimeView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AnimeInfoViewModel}">
                 <view:AnimeInfoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UserProfileViewModel}">
+                <view:UserProfileView/>
             </DataTemplate>
             
         </ResourceDictionary>
