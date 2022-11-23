@@ -7,7 +7,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid Width="200" Height="300"
-                              Margin="40,0,0,40">
+                              Margin="0,0,40,40">
                             <Border CornerRadius="16"
                                     Background="{TemplateBinding Background}">
 

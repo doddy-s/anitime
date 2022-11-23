@@ -47,7 +47,7 @@ namespace Kelompok01.MVVM.View
                 bitmap.EndInit();
                 button.Background = new ImageBrush(bitmap);
                 button.Style = style;
-                HistoryPanel.Children.Add(button);
+                //HistoryPanel.Children.Add(button);
             }
         }
     }

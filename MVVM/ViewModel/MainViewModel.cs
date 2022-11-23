@@ -41,29 +41,13 @@ namespace Kelompok01.MVVM.ViewModel
 
             CurrentView = HomeVM;
 
-            HomeViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = HomeVM;
+            HomeViewCommand = new RelayCommand(o => {CurrentView = HomeVM;});
 
-            });
+            SearchViewCommand = new RelayCommand(o => {CurrentView = SearchVM;});
 
-            SearchViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = SearchVM;
+            HistoryViewCommand = new RelayCommand(o => {CurrentView = HistoryVM;});
 
-            });
-
-            HistoryViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = HistoryVM;
-
-            });
-
-            UserProfileViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = UserProfileVM;
-
-            });
+            UserProfileViewCommand = new RelayCommand(o => {CurrentView = UserProfileVM;});
         }
     }
 }

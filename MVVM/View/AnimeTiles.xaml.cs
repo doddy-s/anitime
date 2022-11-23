@@ -1,5 +1,4 @@
-﻿using Kelompok01.MVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,40 +16,43 @@ using System.Windows.Shapes;
 namespace Kelompok01.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for NewAnimeView.xaml
+    /// Interaction logic for AnimeTiles.xaml
     /// </summary>
-    public partial class NewAnimeView : UserControl
+    public partial class AnimeTiles : Page
     {
-        public NewAnimeView()
+        String[] link;
+        List<Button> buttons = new List<Button>();
+        public AnimeTiles(String[] PhotoUrl, String header)
         {
             InitializeComponent();
+            link = PhotoUrl;
+            AnimeTilesHeader.Content = header;
             GetDynamicWrapPanel();
         }
 
         private void GetDynamicWrapPanel()
         {
-            String[] link = { "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
-                              "https://cdn.myanimelist.net/images/anime/1111/127508.jpg",
-                              "https://cdn.myanimelist.net/images/anime/1228/125011.jpg",
-                              "https://cdn.myanimelist.net/images/anime/1483/126005.jpg",
-                              "https://cdn.myanimelist.net/images/anime/1764/126627.jpg",
-                              "https://cdn.myanimelist.net/images/anime/1258/126929.jpg"};
-
             Style style = this.FindResource("AnimeButtonStyle") as Style;
-
             for (int i = 0; i < 6; i++)
             {
                 Button button = new Button();
                 button.Content = link[i];
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(link[i], UriKind.RelativeOrAbsolute);
+                bitmap.UriSource = new Uri(link[i]);
                 bitmap.EndInit();
                 button.Background = new ImageBrush(bitmap);
-                button.Command = HomeViewModel.AnimeInfoViewCommand;
+                button.Click += new RoutedEventHandler(OpenAnimePage_Click);
                 button.Style = style;
-                HomePanel.Children.Add(button);
+                buttons.Add(button);
+                AnimeTilesWrapPanel.Children.Add(button);
             }
+        }
+
+        private void OpenAnimePage_Click(object sender, EventArgs e)
+        {
+            AnimeInfoView animeInfoView = new AnimeInfoView();
+            App.HomeFrameGlobal.Navigate(animeInfoView);
         }
     }
 }

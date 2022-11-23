@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kelompok01.MVVM.ViewModel
 {
-    internal class NewAnimeViewModel
+    internal class AnimeTiles
     {
     }
 }

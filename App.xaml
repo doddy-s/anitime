@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Kelompok01"
              xmlns:view="clr-namespace:Kelompok01.MVVM.View"
              xmlns:viewModel="clr-namespace:Kelompok01.MVVM.ViewModel"
-             StartupUri="MainWindow.xaml">
+             StartupUri="/MVVM/View/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -23,8 +23,8 @@
             <DataTemplate DataType="{x:Type viewModel:HistoryViewModel}">
                 <view:HistoryView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:NewAnimeViewModel}">
-                <view:NewAnimeView/>
+            <DataTemplate DataType="{x:Type viewModel:AnimeTiles}">
+                <view:AnimeTiles/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AnimeInfoViewModel}">
                 <view:AnimeInfoView/>

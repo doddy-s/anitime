@@ -1,5 +1,4 @@
-﻿using Kelompok01.MVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace Kelompok01.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for AnimeInfoView.xaml
+    /// Interaction logic for HomeAnimeTilesPage.xaml
     /// </summary>
-    public partial class AnimeInfoView : Page
+    public partial class HomeAnimeTilesPage : Page
     {
-        public AnimeInfoView()
+        public HomeAnimeTilesPage()
         {
             InitializeComponent();
         }

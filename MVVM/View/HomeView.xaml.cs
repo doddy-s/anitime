@@ -21,9 +21,32 @@ namespace Kelompok01.MVVM.View
     /// </summary>
     public partial class HomeView : UserControl
     {
+        String[] link = { "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
+                              "https://cdn.myanimelist.net/images/anime/1111/127508.jpg",
+                              "https://cdn.myanimelist.net/images/anime/1228/125011.jpg",
+                              "https://cdn.myanimelist.net/images/anime/1483/126005.jpg",
+                              "https://cdn.myanimelist.net/images/anime/1764/126627.jpg",
+                              "https://cdn.myanimelist.net/images/anime/1258/126929.jpg"};
+
+        public static AnimeTiles NewAnime;
+
         public HomeView()
         {
             InitializeComponent();
+            App.HomeFrameGlobal = HomeFrame;
+            NewAnime = new AnimeTiles(link, "New Anime");
+            HomeFrame.Navigate(NewAnime);
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            HomeFrame.GoBack();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(HomeFrame.CanGoBack) BackButton.Visibility = Visibility.Visible;
+            else BackButton.Visibility = Visibility.Hidden;
         }
     }
 }

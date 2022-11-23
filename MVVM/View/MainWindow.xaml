@@ -62,16 +62,16 @@
                Foreground="White"/>
 
         <Grid Grid.Row="2"
-              Margin="40,0,40,0">
+              Margin="20,0,20,0">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="240"/>
                 <RowDefinition/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel>
-            <RadioButton Height="40"
+                <RadioButton Height="40"
                          Content="Home"
                          Margin="10"
                          Style="{StaticResource MenuButtonStyle}"
@@ -92,11 +92,6 @@
                          Margin="10"
                          Style="{StaticResource MenuButtonStyle}"/>
             </StackPanel>
-
-            <RadioButton Grid.Row="2"
-                         Content="NowPlaying"
-                         Margin="10"
-                         Style="{StaticResource MenuButtonStyle}"/>
         </Grid>
 
         
@@ -135,9 +130,9 @@
 
         </Grid>
 
-        <UserControl Grid.Column="1"
-                     Grid.Row="2"
-                     Content="{Binding CurrentView}"/>
+        <ContentControl Grid.Column="1"
+                        Grid.Row="2"
+                        Content="{Binding CurrentView}"/>
 
     </Grid>
 </Window>
