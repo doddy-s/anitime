@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Kelompok01.Core
 {
-    internal class ObservableObject : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -16,5 +16,7 @@ namespace Kelompok01.Core
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
+        public virtual void Dispose() { }
     }
 }

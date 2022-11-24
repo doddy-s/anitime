@@ -1,4 +1,4 @@
-﻿using Kelompok01.MVVM.ViewModel;
+﻿using Kelompok01.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +21,21 @@ namespace Kelompok01.MVVM.View
     /// </summary>
     public partial class AnimeInfoView : Page
     {
-        public AnimeInfoView()
+        AnimeListTemp anime;
+        public AnimeInfoView(AnimeListTemp anime)
         {
             InitializeComponent();
+            this.DataContext = this;
+            this.anime = anime;
+            setInfo();
         }
+
+        public void setInfo()
+        {
+            AnimeName.Content = anime.name;
+            AnimeDesc.Text = anime.description;
+            AnimeImage.ImageSource = anime.bitmapImage;
+        }
+
     }
 }

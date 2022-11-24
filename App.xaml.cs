@@ -11,9 +11,5 @@ namespace Kelompok01
 {
     public partial class App : Application
     {
-        public static UserControl HomeUC;
-        public static Frame HomeFrameGlobal;
-        public static Frame SearchFrameGlobal;
-        public static Frame HistoryFrameGlobal;
     }
 }

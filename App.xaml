@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Kelompok01"
              xmlns:view="clr-namespace:Kelompok01.MVVM.View"
              xmlns:viewModel="clr-namespace:Kelompok01.MVVM.ViewModel"
-             StartupUri="/MVVM/View/MainWindow.xaml">
+             StartupUri="/MVVM/View/MainWindowView.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,25 +14,13 @@
                 <ResourceDictionary Source="/Style/AnimeButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <DataTemplate  DataType="{x:Type viewModel:HomeViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:SearchViewModel}">
-                <view:SearchView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:HistoryViewModel}">
-                <view:HistoryView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AnimeTiles}">
-                <view:AnimeTiles/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AnimeInfoViewModel}">
                 <view:AnimeInfoView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:UserProfileViewModel}">
-                <view:UserProfileView/>
-            </DataTemplate>
-            
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

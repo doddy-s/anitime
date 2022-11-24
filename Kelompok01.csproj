@@ -55,47 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MVVM\View\AnimeTiles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\HistoryAnimeTilesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\HomeAnimeTilesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="MVVM\ViewModel\AnimeTiles.cs" />
-    <Compile Include="MVVM\View\AnimeTiles.xaml.cs">
-      <DependentUpon>AnimeTiles.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\HistoryAnimeTilesPage.xaml.cs">
-      <DependentUpon>HistoryAnimeTilesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\HomeAnimeTilesPage.xaml.cs">
-      <DependentUpon>HomeAnimeTilesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="MVVM\View\AnimeInfoView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\HistoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,15 +69,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\SearchAnimeTilesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\SearchView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\UserProfileView.xaml">
+    <Page Include="MVVM\View\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,29 +91,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\AnimeListTemp.cs" />
     <Compile Include="MVVM\ViewModel\AnimeInfoViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\HistoryViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\SearchViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\UserProfileViewModel.cs" />
     <Compile Include="MVVM\View\AnimeInfoView.xaml.cs">
       <DependentUpon>AnimeInfoView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\HistoryView.xaml.cs">
-      <DependentUpon>HistoryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\SearchAnimeTilesPage.xaml.cs">
-      <DependentUpon>SearchAnimeTilesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\SearchView.xaml.cs">
-      <DependentUpon>SearchView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\UserProfileView.xaml.cs">
-      <DependentUpon>UserProfileView.xaml</DependentUpon>
+    <Compile Include="MVVM\View\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -183,13 +130,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVVM\Model\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\a0.jpg" />
-    <Resource Include="Image\a1.jpg" />
-    <Resource Include="Image\pp.jpg" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

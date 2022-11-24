@@ -11,14 +11,22 @@ namespace Kelompok01.MVVM.ViewModel
     {
 
         public RelayCommand HomeViewCommand { get; set; }
+        /*
+        public RelayCommand AnimeInfoViewCommand { get; set; }
         public RelayCommand SearchViewCommand { get; set; }
         public RelayCommand HistoryViewCommand { get; set; }
         public RelayCommand UserProfileViewCommand { get; set; }
+        */
 
+        
         public HomeViewModel HomeVM;
+        
+        /*
+        public AnimeInfoViewModel AnimeInfoVM;
         public SearchViewModel SearchVM;
         public HistoryViewModel HistoryVM;
         public UserProfileViewModel UserProfileVM;
+        */
 
         private object _currentView;
 
@@ -35,21 +43,26 @@ namespace Kelompok01.MVVM.ViewModel
         public MainViewModel()
         {
             HomeVM = new HomeViewModel();
+            
+            
+            /*
+            AnimeInfoVM = new AnimeInfoViewModel();
             SearchVM = new SearchViewModel();
             HistoryVM = new HistoryViewModel();
             UserProfileVM = new UserProfileViewModel();
+            */
 
             CurrentView = HomeVM;
 
-            HomeViewCommand = new RelayCommand(o => {CurrentView = HomeVM;});
+            HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVM; });
+            
 
-            SearchViewCommand = new RelayCommand(o => {CurrentView = SearchVM;});
-
-            HistoryViewCommand = new RelayCommand(o => {CurrentView = HistoryVM;});
-
-            UserProfileViewCommand = new RelayCommand(o => {CurrentView = UserProfileVM;});
+            /*
+            AnimeInfoViewCommand = new RelayCommand(o => { CurrentView = AnimeInfoVM; });
+            SearchViewCommand = new RelayCommand(o => { CurrentView = SearchVM; });
+            HistoryViewCommand = new RelayCommand(o => { CurrentView = HistoryVM; });
+            UserProfileViewCommand = new RelayCommand(o => { CurrentView = UserProfileVM; });
+            */
         }
     }
 }
-    
-    
