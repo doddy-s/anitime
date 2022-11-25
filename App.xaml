@@ -12,6 +12,8 @@
                 <ResourceDictionary Source="/Style/SearchBoxStyle.xaml"/>
                 <ResourceDictionary Source="/Style/RoundedButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Style/AnimeButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Style/UsernameBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Style/PasswordBoxStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

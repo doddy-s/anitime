@@ -57,7 +57,7 @@ namespace Kelompok01.MVVM.View
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            App.rootFrame.Navigate(new UserProfileView());
+            App.rootFrame.Navigate(new LoginView());
         }
     }
 }
