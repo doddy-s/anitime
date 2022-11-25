@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="/Style/AnimeButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Style/UsernameBoxStyle.xaml"/>
                 <ResourceDictionary Source="/Style/PasswordBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Style/ScrollBarApik.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
