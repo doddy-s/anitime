@@ -22,6 +22,7 @@ namespace Kelompok01.MVVM.View
         public MainWindowView()
         {
             InitializeComponent();
+            App.rootFrame = MainFrame;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -52,6 +53,11 @@ namespace Kelompok01.MVVM.View
             {
                 this.DragMove();
             }
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.rootFrame.Navigate(new UserProfileView());
         }
     }
 }

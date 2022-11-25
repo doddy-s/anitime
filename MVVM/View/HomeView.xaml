@@ -12,14 +12,53 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Name="BackButton"
-                Width="80" Height="40"
-                HorizontalAlignment="Left"
-                Visibility="Collapsed"
-                Click="BackButton_Click"
-                Content="BackButton"/>
+        <StackPanel x:Name="NavigationPanel"
+                    Orientation="Horizontal"
+                    Visibility="Collapsed">
+            <Grid>
+                <Button x:Name="BackButton"
+                        Width="140" Height="40"
+                        Margin="0,10,10,10"
+                        HorizontalAlignment="Left"
+                        Click="BackButton_Click"
+                        Content="Back"
+                        Foreground="White"
+                        FontFamily="/Font/#NTR"
+                        FontSize="16"
+                        Background="#4D4D4D"
+                        Style="{StaticResource RoundedButton}"/>
+                <Image Source="/Icon/Back.png"
+                       Width="24" Height="24"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="8,0,0,0"/>
+            </Grid>
+
+            <Grid>
+                <Button x:Name="StreamButton"
+                        Width="140" Height="40"
+                        Margin="10,10,0,10"
+                        HorizontalAlignment="Left"
+                        Click="BackButton_Click"
+                        Content="Stream"
+                        Foreground="White"
+                        FontFamily="/Font/#NTR"
+                        FontSize="16"
+                        Background="#4D4D4D"
+                        Style="{StaticResource RoundedButton}"/>
+                
+                <Image Source="/Icon/Stream.png"
+                       Width="24" Height="24"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="0,0,8,0"/>
+            </Grid>
+            
+        </StackPanel>
+        
 
         <ScrollViewer Grid.Row="1"
+                      Margin="0,4,0,0"
                       VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>

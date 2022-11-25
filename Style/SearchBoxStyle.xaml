@@ -9,7 +9,7 @@
                             CornerRadius="20">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
-                            <TextBox  Margin="5,0,0,0"
+                            <TextBox  Margin="40,0,0,0"
                                       Text="{TemplateBinding Text}"
                                       BorderThickness="0"
                                       Background="Transparent"
@@ -22,7 +22,7 @@
                                        Text="Search"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Margin="10,0,0,0"
+                                       Margin="45,0,0,0"
                                        FontFamily="/Font/#NTR"
                                        FontSize="14"
                                        Foreground="White"

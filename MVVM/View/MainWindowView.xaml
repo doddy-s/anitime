@@ -30,26 +30,25 @@
                     VerticalAlignment="Center"
                     Margin="0,0,6,0"
                     Orientation="Horizontal">
-            <Button x:Name="Button1"
+                <Button x:Name="Button1"
                     Width="18" Height="18"
                     Style="{StaticResource RoundedButton}"
                     Click="MinimizeButton_Click"
                     Background="#59BD50"
                     Opacity="50"></Button>
-            <Button Width="18" Height="18"
+                <Button Width="18" Height="18"
                     Margin="6,0,0,0"
                     Style="{StaticResource RoundedButton}"
                     Click="MaximizeButton_Click"
                     Background="#F3FF64"
                     Opacity="50"></Button>
-            <Button Width="18" Height="18"
+                <Button Width="18" Height="18"
                     Margin="6,0,0,0"
                     Style="{StaticResource RoundedButton}"
                     Click="ExitButton_Click"
                     Background="#FF5050"></Button>
-        </StackPanel>
+            </StackPanel>
         </Grid>
-        
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -78,28 +77,97 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel>
-                    <RadioButton Height="60"
-                                 Content="Home"
-                                 Margin="20,10,20,10"
-                                 Style="{StaticResource MenuButtonStyle}"
-                                 IsChecked="True"
-                                 Command="{Binding HomeViewCommand}"/>
-                    <RadioButton Height="60"
-                                 Content="Search"
-                                 Margin="20,10,20,10"
-                                 Style="{StaticResource MenuButtonStyle}"/>
-                    <RadioButton Height="60"
-                                 Content="History"
-                                 Margin="20,10,20,10"
-                                 Style="{StaticResource MenuButtonStyle}"/>
-                    <RadioButton Height="60"
-                                 Content="Setting"
-                                 Margin="20,10,20,10"
-                                 Style="{StaticResource MenuButtonStyle}"/>
+                    <Grid Height="60"
+                          Margin="20,10,20,10">
+                        <RadioButton Name="Home"
+                                     GroupName="MenuButtons"
+                                     Style="{StaticResource MenuButtonStyle}"
+                                     IsChecked="True"
+                                     Command="{Binding HomeViewCommand}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="16"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="1"
+                                   Source="/Icon/Home.png"
+                                   Width="16" Height="16"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,5"/>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Height="60"
+                          Margin="20,10,20,10">
+                        <RadioButton Name="Search"
+                                     GroupName="MenuButtons"
+                                     Style="{StaticResource MenuButtonStyle}"
+                                     Command="{Binding HomeViewCommand}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="16"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="1"
+                                   Source="/Icon/Search.png"
+                                   Width="16" Height="16"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,5"/>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Height="60"
+                          Margin="20,10,20,10">
+                        <RadioButton Name="History"
+                                     GroupName="MenuButtons"
+                                     Style="{StaticResource MenuButtonStyle}"
+                                     Command="{Binding HomeViewCommand}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="16"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="1"
+                                   Source="/Icon/History.png"
+                                   Width="16" Height="16"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,5"/>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Height="60"
+                          Margin="20,10,20,10">
+                        <RadioButton Name="Setting"
+                                     GroupName="MenuButtons"
+                                     Style="{StaticResource MenuButtonStyle}"
+                                     Command="{Binding HomeViewCommand}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="16"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="1"
+                                   Source="/Icon/Setting.png"
+                                   Width="16" Height="16"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,5"/>
+                        </Grid>
+                    </Grid>
                 </StackPanel>
             </Grid>
-
-
 
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -118,17 +186,25 @@
                          VerticalContentAlignment="Stretch"
                          HorizontalContentAlignment="Stretch"
                          Style="{StaticResource SearchBoxStyle}"/>
+                    
+                    <Image Grid.Row="1"
+                           Source="/Icon/Search.png"
+                           Width="24" Height="24"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="8,0,0,0"/>
                 </Grid>
 
-                <RadioButton Grid.Column="1"
-                         HorizontalAlignment="Center"
-                         VerticalAlignment="Center"
-                         Width="40" Height="40"
-                         Style="{StaticResource MenuButtonStyle}">
-                    <RadioButton.Background>
-                        <ImageBrush ImageSource="https://s4.anilist.co/file/anilistcdn/user/avatar/large/b352160-n9anv6OEVkrQ.jpg"/>
-                    </RadioButton.Background>
-                </RadioButton>
+                <Button Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="40" Height="40"
+                        Style="{StaticResource RoundedButton}"
+                        Click="ProfileButton_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="https://cdn.myanimelist.net/images/userimages/8157198.jpg"/>
+                    </Button.Background>
+                </Button>
 
             </Grid>
 
@@ -137,5 +213,10 @@
                                 Content="{Binding CurrentView}"/>
 
         </Grid>
+
+        <Frame Grid.Row="1"
+               x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"/>
+
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-﻿using Kelompok01.MVVM.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,25 +16,18 @@ using System.Windows.Shapes;
 namespace Kelompok01.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for AnimeInfoView.xaml
+    /// Interaction logic for UserProfileView.xaml
     /// </summary>
-    public partial class AnimeInfoView : Page
+    public partial class UserProfileView : Page
     {
-        AnimeListTemp anime;
-        public AnimeInfoView(AnimeListTemp anime)
+        public UserProfileView()
         {
             InitializeComponent();
-            this.DataContext = this;
-            this.anime = anime;
-            setInfo();
         }
 
-        public void setInfo()
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            AnimeName.Content = anime.name;
-            AnimeDesc.Text = anime.description;
-            AnimePic.Background = new ImageBrush(anime.bitmapImage);
+            App.rootFrame.Content = null;
         }
-
     }
 }

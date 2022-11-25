@@ -11,5 +11,6 @@ namespace Kelompok01
 {
     public partial class App : Application
     {
+        public static Frame rootFrame;
     }
 }

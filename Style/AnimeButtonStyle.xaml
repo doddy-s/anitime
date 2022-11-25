@@ -8,16 +8,15 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Width="300" Height="450"
                               Margin="0,0,40,40">
+
                             <Border CornerRadius="16"
                                     Background="{TemplateBinding Background}">
-
                                 <Label VerticalAlignment="Bottom"
-                                    HorizontalAlignment="Left"
-                                    Foreground="White"
-                                    FontFamily="/Font/#NTR"
-                                    FontSize="16"
-                                    Margin="10"
-                                    Content="{TemplateBinding Content}"/>
+                                       HorizontalAlignment="Left"
+                                       Foreground="White"
+                                       FontFamily="/Font/#NTR"
+                                       FontSize="24"
+                                       Content="{TemplateBinding Content}"/>
 
                             </Border>
                         </Grid>

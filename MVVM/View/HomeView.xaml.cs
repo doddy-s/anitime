@@ -30,14 +30,14 @@ namespace Kelompok01.MVVM.View
             GetDynamicWrapPanel();
         }
 
-        string[] link = { "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-lawCwhzhi96X.jpg",
-                              "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107704-3Noksvj7wah5.png",
-                              "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21519-XIr3PeczUjjF.png",
-                              "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30-wmNoX3m2qTzz.jpg",
-                              "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132126-kxCCgt2vrCtC.png",
-                              "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103047-LYIbLtN2Rb5T.jpg"};
-
-        List<Button> buttons = new List<Button>();
+        string[] link = { "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1764/126627.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1111/127508.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1483/126005.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1228/125011.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1476/125643.jpg"};
+        string[] animeName = { "Chainsaw Man", "Bleach: Sennen Kessen-hen", "Spy x Family Part 2",
+                               "Boku no Hero Academia 6th Season", "Mob Psycho 100 III", "Shinobi no Ittoki" };
         List<AnimeListTemp> animes = new List<AnimeListTemp>();
 
         private void GetDynamicWrapPanel()
@@ -46,18 +46,21 @@ namespace Kelompok01.MVVM.View
             for (int i = 0; i < 6; i++)
             {
                 Button button = new Button();
-                button.Content = link[i];
+                button.Tag = i;
+                button.Content = animeName[i];
+
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(link[i]);
                 bitmap.EndInit();
+
                 button.Background = new ImageBrush(bitmap);
                 button.Click += new RoutedEventHandler(OpenAnimeInfoView_Click);
                 button.Style = style;
-                button.Tag = i;
-                buttons.Add(button);
+                
                 AnimeTilesWrapPanel.Children.Add(button);
-                AnimeListTemp anime = new AnimeListTemp(link[i], link[i], bitmap);
+
+                AnimeListTemp anime = new AnimeListTemp(animeName[i], link[i], bitmap);
                 animes.Add(anime);
             }
         }
@@ -65,13 +68,13 @@ namespace Kelompok01.MVVM.View
         private void OpenAnimeInfoView_Click(object sender, RoutedEventArgs e)
         {
             HomeFrame.Navigate(new AnimeInfoView(animes[(int)(sender as Button).Tag]));
-            BackButton.Visibility = Visibility.Visible;
+            NavigationPanel.Visibility = Visibility.Visible;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             HomeFrame.Content = null;
-            BackButton.Visibility = Visibility.Collapsed;
+            NavigationPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

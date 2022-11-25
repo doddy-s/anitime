@@ -5,43 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kelompok01.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1040"
+             d:DesignHeight="540" d:DesignWidth="1040"
              Background="#222222">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260"/>
-            <ColumnDefinition Width="780*"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="390"/>
-                <RowDefinition Height="210*"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <Rectangle VerticalAlignment="Stretch"
-                       HorizontalAlignment="Stretch">
-                <Rectangle.Fill>
-                    <ImageBrush x:Name="AnimeImage"/>
-                </Rectangle.Fill>
-            </Rectangle>
-
-            <Button Grid.Row="1"
-                    Width="240" Height="40"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Stretch"
-                    Margin="0,10,0,0"
-                    Content="Watch">
-            </Button>
-
+            <Grid>
+                <Border x:Name="AnimePic" CornerRadius="16"/>
+            </Grid>
+            
         </Grid>
 
         <Grid Grid.Column="1" Margin="20,0,40,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
             <Label x:Name="AnimeName"

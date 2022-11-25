@@ -61,6 +61,10 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Page Include="MVVM\View\AnimeEpisodesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AnimeInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -70,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,6 +103,9 @@
     <Compile Include="MVVM\ViewModel\AnimeInfoViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\View\AnimeEpisodesView.xaml.cs">
+      <DependentUpon>AnimeEpisodesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\AnimeInfoView.xaml.cs">
       <DependentUpon>AnimeInfoView.xaml</DependentUpon>
     </Compile>
@@ -103,6 +114,9 @@
     </Compile>
     <Compile Include="MVVM\View\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserProfileView.xaml.cs">
+      <DependentUpon>UserProfileView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -130,6 +144,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icon\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Stream.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
