@@ -27,14 +27,20 @@ namespace Kelompok01.MVVM.View
             GetDynamicWrapPanel();
         }
 
-        string[] link = { "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
-                          "https://cdn.myanimelist.net/images/anime/1764/126627.jpg",
-                          "https://cdn.myanimelist.net/images/anime/1111/127508.jpg",
-                          "https://cdn.myanimelist.net/images/anime/1483/126005.jpg",
-                          "https://cdn.myanimelist.net/images/anime/1228/125011.jpg",
-                          "https://cdn.myanimelist.net/images/anime/1476/125643.jpg"};
-        string[] animeName = { "Chainsaw Man", "Bleach: Sennen Kessen-hen", "Spy x Family Part 2",
-                               "Boku no Hero Academia 6th Season", "Mob Psycho 100 III", "Shinobi no Ittoki" };
+        string[] link = { "https://cdn.myanimelist.net/images/anime/1295/106551.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1764/106659.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1935/93606.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1027/115055.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1160/122627.jpg",
+                          "https://cdn.myanimelist.net/images/anime/1670/130060.jpg"};
+
+        string[] animeName = { "Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen",
+                               "Kaguya-sama wa Kokurasetai? Tensai-tachi no Renai Zunousen",
+                               "Kaguya-hime no Monogatari",
+                               "Kaguya-sama wa Kokurasetai? Tensai-tachi no Renai Zunousen OVA",
+                               "Kaguya-sama wa Kokurasetai: Ultra Romantic",
+                               "Kaguya-sama wa Kokurasetai: First Kiss wa Owaranai" };
+
         List<AnimeListTemp> animes = new List<AnimeListTemp>();
 
         private void GetDynamicWrapPanel()

@@ -15,7 +15,5 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Menu></Menu>
-        
     </Grid>
 </Page>
