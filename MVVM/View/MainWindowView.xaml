@@ -11,7 +11,7 @@
         ResizeMode="CanResizeWithGrip"
         MinHeight="540" MinWidth="960"
         WindowStartupLocation="CenterScreen"
-        Title="MainView" Height="720" Width="1280"
+        Title="anitime" Height="720" Width="1280"
         Background="#222222">
 
     <Window.DataContext>

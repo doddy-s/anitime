@@ -8,13 +8,25 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		semi-Release|Any CPU = semi-Release|Any CPU
+		semi-Release|x64 = semi-Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Debug|x64.ActiveCfg = Debug|x64
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Debug|x64.Build.0 = Debug|x64
 		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Release|x64.ActiveCfg = Release|x64
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.Release|x64.Build.0 = Release|x64
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.semi-Release|Any CPU.ActiveCfg = semi-Release|Any CPU
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.semi-Release|Any CPU.Build.0 = semi-Release|Any CPU
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.semi-Release|x64.ActiveCfg = semi-Release|x64
+		{CAB597D9-993D-44FA-8A66-1A309A996C53}.semi-Release|x64.Build.0 = semi-Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
