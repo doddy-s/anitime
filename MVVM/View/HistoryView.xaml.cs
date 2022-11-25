@@ -17,14 +17,11 @@ using System.Windows.Shapes;
 namespace Kelompok01.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for HistoryView.xaml
     /// </summary>
-    /// 
-        
-
-    public partial class HomeView : UserControl
+    public partial class HistoryView : UserControl
     {
-        public HomeView()
+        public HistoryView()
         {
             InitializeComponent();
             GetDynamicWrapPanel();
@@ -46,8 +43,8 @@ namespace Kelompok01.MVVM.View
             for (int i = 0; i < 6; i++)
             {
                 Button button = new Button();
-                button.Width = 300;
-                button.Height = 450;
+                button.Width = 200;
+                button.Height = 300;
                 button.Margin = new Thickness(0, 0, 20, 20);
                 button.Tag = i;
                 button.Content = animeName[i];
@@ -60,7 +57,7 @@ namespace Kelompok01.MVVM.View
                 button.Background = new ImageBrush(bitmap);
                 button.Click += new RoutedEventHandler(OpenAnimeInfoView_Click);
                 button.Style = style;
-                
+
                 AnimeTilesWrapPanel.Children.Add(button);
 
                 AnimeListTemp anime = new AnimeListTemp(animeName[i], link[i], bitmap);
@@ -70,13 +67,13 @@ namespace Kelompok01.MVVM.View
 
         private void OpenAnimeInfoView_Click(object sender, RoutedEventArgs e)
         {
-            HomeFrame.Navigate(new AnimeInfoView(animes[(int)(sender as Button).Tag]));
+            HistoryFrame.Navigate(new AnimeInfoView(animes[(int)(sender as Button).Tag]));
             NavigationPanel.Visibility = Visibility.Visible;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            HomeFrame.Content = null;
+            HistoryFrame.Content = null;
             NavigationPanel.Visibility = Visibility.Collapsed;
         }
     }

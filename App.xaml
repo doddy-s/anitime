@@ -20,6 +20,12 @@
             <DataTemplate DataType="{x:Type viewModel:AnimeInfoViewModel}">
                 <view:AnimeInfoView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SearchViewModel}">
+                <view:SearchView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:HistoryViewModel}">
+                <view:HistoryView/>
+            </DataTemplate>
 
         </ResourceDictionary>
     </Application.Resources>

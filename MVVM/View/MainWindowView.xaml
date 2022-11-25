@@ -106,7 +106,7 @@
                         <RadioButton Name="Search"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
-                                     Command="{Binding HomeViewCommand}"/>
+                                     Command="{Binding SearchViewCommand}"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
@@ -128,7 +128,7 @@
                         <RadioButton Name="History"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
-                                     Command="{Binding HomeViewCommand}"/>
+                                     Command="{Binding HistoryViewCommand}"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>

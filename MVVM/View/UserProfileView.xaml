@@ -157,7 +157,7 @@
                                        FontSize="48"
                                        TextWrapping="Wrap"
                                        TextAlignment="Center">
-                                Congratulations!!!! You wasted xx,x day of your life watching anime.
+                                Congratulations!!!! You wasted xx,x day of your life watching animes.
                             </TextBlock>
                         </Border>
                     </Grid>
