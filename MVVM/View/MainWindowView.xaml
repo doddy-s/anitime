@@ -61,11 +61,8 @@
                 <RowDefinition Height="600*"/>
             </Grid.RowDefinitions>
 
-            <Label VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   Content="Kelompok01"
-                   FontSize="32"
-                   Foreground="White"/>
+            <Image Source="/Icon/Logo_SD.png"
+                   Height="69"/>
 
             <Grid Grid.Row="2"
               Margin="10,0,10,0">
@@ -150,7 +147,7 @@
                         <RadioButton Name="Setting"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
-                                     Command="{Binding HomeViewCommand}"/>
+                                     Command="{Binding SettingViewCommand}"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>

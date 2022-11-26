@@ -1,5 +1,4 @@
-﻿using Kelompok01.MVVM.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,21 +16,23 @@ using System.Windows.Shapes;
 namespace Kelompok01.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for AnimeEpisodesView.xaml
+    /// Interaction logic for SettingView.xaml
     /// </summary>
-    public partial class AnimeEpisodesView : Page
+    public partial class SettingView : UserControl
     {
-        public AnimeEpisodesView()
+        public SettingView()
         {
             InitializeComponent();
-            AnimeName.Content = "AnimeName";
-            ShowEpisodes();
+            ShowSettings();
+
         }
 
-        private void ShowEpisodes()
+        string[] settings = { "Notifikasi", "Bahasa", "Hapus Riwayat", "Ubah Tema Warna", "Log Out" };
+
+        private void ShowSettings()
         {
             Style style = this.FindResource("WideButtonStyle") as Style;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Grid grid = new Grid();
                 grid.Height = 60;
@@ -39,11 +40,11 @@ namespace Kelompok01.MVVM.View
                 Button button = new Button();
                 button.HorizontalAlignment = HorizontalAlignment.Stretch;
                 button.Tag = i;
-                button.Content = "Episode" + Convert.ToString(i+1);
+                button.Content = settings[i];
                 button.Style = style;
 
                 grid.Children.Add(button);
-                EpisodesStackPanel.Children.Add(grid);
+                SettingStackPanel.Children.Add(grid);
             }
         }
     }

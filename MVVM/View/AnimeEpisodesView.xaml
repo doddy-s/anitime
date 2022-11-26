@@ -6,14 +6,30 @@
       xmlns:local="clr-namespace:Kelompok01.MVVM.View"
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="1040"
-      Title="AnimeEpisodesView">
+      Title="AnimeEpisodesView"
+      Background="#222222">
 
-    <Grid>
+    <Grid Margin="0,0,10,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <Label x:Name="AnimeName"
+               FontFamily="/Font/#NTR"
+               FontSize="32"
+               Foreground="White"/>
+
+
+        <ScrollViewer Grid.Row="1"
+                      Margin="0,4,0,0"
+                      VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <StackPanel x:Name="EpisodesStackPanel"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"/>
+            </Grid>
+
+        </ScrollViewer>
     </Grid>
 </Page>

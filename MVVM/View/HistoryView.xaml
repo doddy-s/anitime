@@ -39,7 +39,7 @@
                         Width="140" Height="40"
                         Margin="10,10,0,10"
                         HorizontalAlignment="Left"
-                        Click="BackButton_Click"
+                        Click="StreamButton_Click"
                         Content="Stream"
                         Foreground="White"
                         FontFamily="/Font/#NTR"

@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="WideButtonStyle"
+           TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Height="40">
+                            <Border CornerRadius="12"
+                                    Background="#4D4D4D">
+                                <Label VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Foreground="White"
+                                       FontFamily="/Font/#NTR"
+                                       FontSize="20"
+                                       Content="{TemplateBinding Content}"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+
+    </Style>
+</ResourceDictionary>

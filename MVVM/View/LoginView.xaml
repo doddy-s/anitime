@@ -37,13 +37,20 @@
 
         <Grid   Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="110"/>
                 <RowDefinition Height="48"/>
                 <RowDefinition Height="48"/>
                 <RowDefinition Height="90"/>
-                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+
+            <Grid Width="300" Height="300"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Image Source="/Icon/Logo_HD.png"
+                   Height="240"/>
+            </Grid>
+            
 
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>

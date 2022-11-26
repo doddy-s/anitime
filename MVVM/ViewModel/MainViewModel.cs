@@ -13,6 +13,7 @@ namespace Kelompok01.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand SearchViewCommand { get; set; }
         public RelayCommand HistoryViewCommand { get; set; }
+        public RelayCommand SettingViewCommand { get; set; }
 
 
         /*
@@ -26,6 +27,7 @@ namespace Kelompok01.MVVM.ViewModel
         public HomeViewModel HomeVM;
         public SearchViewModel SearchVM;
         public HistoryViewModel HistoryVM;
+        public SettingViewModel SettingVM;
 
         /*
         public AnimeInfoViewModel AnimeInfoVM;
@@ -51,6 +53,7 @@ namespace Kelompok01.MVVM.ViewModel
             HomeVM = new HomeViewModel();
             SearchVM = new SearchViewModel();
             HistoryVM = new HistoryViewModel();
+            SettingVM = new SettingViewModel();
 
 
             /*
@@ -65,6 +68,7 @@ namespace Kelompok01.MVVM.ViewModel
             HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVM; });
             SearchViewCommand = new RelayCommand(o => { CurrentView = SearchVM; });
             HistoryViewCommand = new RelayCommand(o => { CurrentView = HistoryVM; });
+            SettingViewCommand = new RelayCommand(o => { CurrentView = SettingVM; });
 
 
             /*

@@ -73,8 +73,22 @@ namespace Kelompok01.MVVM.View
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            HistoryFrame.Content = null;
-            NavigationPanel.Visibility = Visibility.Collapsed;
+            if (HistoryFrame.CanGoBack)
+            {
+                HistoryFrame.GoBack();
+                StreamButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                HistoryFrame.Content = null;
+                NavigationPanel.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void StreamButton_Click(object sender, RoutedEventArgs e)
+        {
+            HistoryFrame.Navigate(new AnimeEpisodesView());
+            StreamButton.Visibility = Visibility.Collapsed;
         }
     }
 }
