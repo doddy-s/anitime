@@ -13,21 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kelompok01.MVVM.View
+namespace Kelompok01.Views
 {
     /// <summary>
-    /// Interaction logic for UserProfileView.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class UserProfileView : Page
+    public partial class LoginView : Page
     {
-        public UserProfileView()
+        public LoginView()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            App.rootFrame.Content = null;
+            App.UserProfileFrame.Content = null;
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.UserProfileFrame.Navigate(new UserProfileView());
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kelompok01.MVVM.View
+namespace Kelompok01.Views
 {
     /// <summary>
     /// Interaction logic for SettingView.xaml

@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,8 +59,57 @@
     <OutputPath>bin\x64\semi-Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AnimeDl, Version=1.7.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AnimeDl.1.7.8\lib\net461\AnimeDl.dll</HintPath>
+    </Reference>
+    <Reference Include="BrotliSharpLib, Version=0.3.2.0, Culture=neutral, PublicKeyToken=3f4e2a1cd615fcb7, processorArchitecture=MSIL">
+      <HintPath>packages\BrotliSharpLib.0.3.3\lib\net451\BrotliSharpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.42.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.11.42\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="JGrabber, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\JGrabber.1.1.0\lib\net461\JGrabber.dll</HintPath>
+    </Reference>
+    <Reference Include="JGrabber.Hls, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\JGrabber.Hls.1.1.0\lib\net461\JGrabber.Hls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Nager.PublicSuffix, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Nager.PublicSuffix.2.3.0\lib\netstandard2.0\Nager.PublicSuffix.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.6.0.5\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -81,110 +132,101 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\ObservableObject.cs" />
-    <Compile Include="Core\RelayCommand.cs" />
-    <Page Include="MVVM\View\AnimeEpisodesView.xaml">
+    <Page Include="Styles\AnimeButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\MenuButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\PasswordBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RoundedButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ScrollBarApik.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\SearchBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\UsernameBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\WideButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AnimeEpisodesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AnimeInfoView.xaml">
+    <Page Include="Views\AnimeInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\HistoryView.xaml">
+    <Page Include="Views\HistoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\HomeView.xaml">
+    <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\LoginView.xaml">
+    <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\MainWindowView.xaml">
+    <Page Include="Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\SearchView.xaml">
+    <Page Include="Views\SearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\SettingView.xaml">
+    <Page Include="Views\SettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\UserProfileView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\AnimeButtonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\MenuButtonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\PasswordBoxStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\RoundedButtonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\ScrollBarApik.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\SearchBoxStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\UsernameBoxStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Style\WideButtonStyle.xaml">
+    <Page Include="Views\UserProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVM\Model\AnimeListTemp.cs" />
-    <Compile Include="MVVM\ViewModel\AnimeInfoViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\HistoryViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\SearchViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\SettingViewModel.cs" />
-    <Compile Include="MVVM\View\AnimeEpisodesView.xaml.cs">
+    <Compile Include="Views\AnimeEpisodesView.xaml.cs">
       <DependentUpon>AnimeEpisodesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\AnimeInfoView.xaml.cs">
+    <Compile Include="Views\AnimeInfoView.xaml.cs">
       <DependentUpon>AnimeInfoView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\HistoryView.xaml.cs">
+    <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\HomeView.xaml.cs">
+    <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\LoginView.xaml.cs">
+    <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\MainWindowView.xaml.cs">
+    <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\SearchView.xaml.cs">
+    <Compile Include="Views\SearchView.xaml.cs">
       <DependentUpon>SearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\SettingView.xaml.cs">
+    <Compile Include="Views\SettingView.xaml.cs">
       <DependentUpon>SettingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\UserProfileView.xaml.cs">
+    <Compile Include="Views\UserProfileView.xaml.cs">
       <DependentUpon>UserProfileView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -204,7 +246,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Font\NTR.ttf" />
+    <Resource Include="Fonts\NTR.ttf" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -213,39 +256,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Icon\Home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\History.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Setting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Stream.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\UserName.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\UserName1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Lock1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon\Logo_HD.png" />
-    <Resource Include="Icon\Logo_SD.png" />
+    <Resource Include="Icons\Back.png" />
+    <Resource Include="Icons\History.png" />
+    <Resource Include="Icons\Home.png" />
+    <Resource Include="Icons\Lock.png" />
+    <Resource Include="Icons\Lock1.png" />
+    <Resource Include="Icons\Logo_HD.png" />
+    <Resource Include="Icons\Logo_SD.png" />
+    <Resource Include="Icons\Search.png" />
+    <Resource Include="Icons\Setting.png" />
+    <Resource Include="Icons\Stream.png" />
+    <Resource Include="Icons\UserName.png" />
+    <Resource Include="Icons\UserName1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.6.0.5\build\System.Text.Json.targets'))" />
+  </Target>
 </Project>

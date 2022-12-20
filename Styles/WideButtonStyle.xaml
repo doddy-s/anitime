@@ -9,11 +9,11 @@
                         <Grid Height="40">
                             <Border CornerRadius="12"
                                     Background="#4D4D4D">
-                                <Label VerticalAlignment="Bottom"
+                                <Label VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Foreground="White"
                                        FontFamily="/Font/#NTR"
-                                       FontSize="20"
+                                       FontSize="18"
                                        Content="{TemplateBinding Content}"/>
                             </Border>
                         </Grid>

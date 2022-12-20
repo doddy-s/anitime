@@ -12,17 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Kelompok01.MVVM.View
+namespace Kelompok01.Views
 {
     /// <summary>
     /// Interaction logic for MainWindowView.xaml
     /// </summary>
     public partial class MainWindowView : Window
     {
+        List<UserControl> userControls = new List<UserControl>();
+
         public MainWindowView()
         {
             InitializeComponent();
-            App.rootFrame = MainFrame;
+
+            App.UserProfileFrame = this.UserProfileFrame;
+
+            userControls.AddRange(new List<UserControl>
+            {
+                new HomeView(),
+                new SearchView(null),
+                new HistoryView(),
+                new SettingView()
+            });
+
+            MainContent.Content = userControls[0];
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -57,7 +70,34 @@ namespace Kelompok01.MVVM.View
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            App.rootFrame.Navigate(new LoginView());
+            App.UserProfileFrame.Navigate(new LoginView());
+        }
+
+        private void NavigateMainContent(object sender, RoutedEventArgs e)
+        {
+            var tag = Convert.ToInt32((sender as RadioButton).Tag);
+            MainContent.Content = userControls[tag];
+        }
+
+        private void EnterSearch(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                OpenSearch(SearchBox.Text);
+                e.Handled = true;
+            }
+        }
+
+        private void OpenSearch(string keyWord)
+        {
+            userControls[1] = new SearchView(keyWord);
+            Search.IsChecked = true;
+            MainContent.Content = userControls[1];
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenSearch(SearchBox.Text);
         }
     }
 }

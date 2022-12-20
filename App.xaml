@@ -2,38 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Kelompok01"
-             xmlns:view="clr-namespace:Kelompok01.MVVM.View"
-             xmlns:viewModel="clr-namespace:Kelompok01.MVVM.ViewModel"
-             StartupUri="/MVVM/View/MainWindowView.xaml">
+             StartupUri="/Views/MainWindowView.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Style/MenuButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Style/SearchBoxStyle.xaml"/>
-                <ResourceDictionary Source="/Style/RoundedButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Style/AnimeButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Style/UsernameBoxStyle.xaml"/>
-                <ResourceDictionary Source="/Style/PasswordBoxStyle.xaml"/>
-                <ResourceDictionary Source="/Style/ScrollBarApik.xaml"/>
-                <ResourceDictionary Source="/Style/WideButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/MenuButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/SearchBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/RoundedButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/AnimeButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/UsernameBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/PasswordBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/ScrollBarApik.xaml"/>
+                <ResourceDictionary Source="/Styles/WideButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
-            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AnimeInfoViewModel}">
-                <view:AnimeInfoView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:SearchViewModel}">
-                <view:SearchView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:HistoryViewModel}">
-                <view:HistoryView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:SettingViewModel}">
-                <view:SettingView/>
-            </DataTemplate>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>

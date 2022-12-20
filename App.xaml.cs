@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimeDl;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,6 +12,7 @@ namespace Kelompok01
 {
     public partial class App : Application
     {
-        public static Frame rootFrame;
+        public static AnimeClient client = new AnimeClient(AnimeDl.Scrapers.AnimeSites.GogoAnime);
+        public static Frame UserProfileFrame;
     }
 }
