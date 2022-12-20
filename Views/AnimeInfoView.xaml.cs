@@ -1,4 +1,4 @@
-﻿using Kelompok01.MVVM.Model;
+﻿using AnimeDl.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,27 +14,37 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kelompok01.MVVM.View
+namespace Kelompok01.Views
 {
     /// <summary>
     /// Interaction logic for AnimeInfoView.xaml
     /// </summary>
     public partial class AnimeInfoView : Page
     {
-        AnimeListTemp anime;
-        public AnimeInfoView(AnimeListTemp anime)
+        Anime anime;
+        public AnimeInfoView(string animeId)
         {
             InitializeComponent();
             this.DataContext = this;
-            this.anime = anime;
+            _ = getInfo(animeId);
+        }
+
+        private async Task getInfo(string animeId)
+        {
+            anime = await App.client.GetAnimeInfoAsync(animeId);
             setInfo();
         }
 
         public void setInfo()
         {
-            AnimeName.Content = anime.name;
-            AnimeDesc.Text = anime.description;
-            AnimePic.Background = new ImageBrush(anime.bitmapImage);
+            AnimeName.Content = anime.Title;
+            AnimeDesc.Text = anime.Summary;
+            //AnimePic.Background = new ImageBrush(anime.bitmapImage);
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(anime.Image);
+            bitmap.EndInit();
+            AnimePic.Background = new ImageBrush(bitmap);
         }
 
     }

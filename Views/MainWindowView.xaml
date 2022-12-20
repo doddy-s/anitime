@@ -1,10 +1,9 @@
-﻿<Window x:Class="Kelompok01.MVVM.View.MainWindowView"
+﻿<Window x:Class="Kelompok01.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Kelompok01.MVVM.View"
-        xmlns:viewModel="clr-namespace:Kelompok01.MVVM.ViewModel"
+        xmlns:local="clr-namespace:Kelompok01.Views"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -13,11 +12,6 @@
         WindowStartupLocation="CenterScreen"
         Title="anitime" Height="720" Width="1280"
         Background="#222222">
-
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -61,7 +55,7 @@
                 <RowDefinition Height="600*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="/Icon/Logo_SD.png"
+            <Image Source="/Icons/Logo_SD.png"
                    Height="69"/>
 
             <Grid Grid.Row="2"
@@ -77,10 +71,11 @@
                     <Grid Height="60"
                           Margin="20,10,20,10">
                         <RadioButton Name="Home"
+                                     Tag="0"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
                                      IsChecked="True"
-                                     Command="{Binding HomeViewCommand}"/>
+                                     Click="NavigateMainContent"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
@@ -89,7 +84,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="1"
-                                   Source="/Icon/Home.png"
+                                   Source="/Icons/Home.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
@@ -101,9 +96,10 @@
                     <Grid Height="60"
                           Margin="20,10,20,10">
                         <RadioButton Name="Search"
+                                     Tag="1"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
-                                     Command="{Binding SearchViewCommand}"/>
+                                     Click="NavigateMainContent"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
@@ -112,7 +108,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="1"
-                                   Source="/Icon/Search.png"
+                                   Source="/Icons/Search.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
@@ -123,9 +119,10 @@
                     <Grid Height="60"
                           Margin="20,10,20,10">
                         <RadioButton Name="History"
+                                     Tag="2"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
-                                     Command="{Binding HistoryViewCommand}"/>
+                                     Click="NavigateMainContent"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
@@ -134,7 +131,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="1"
-                                   Source="/Icon/History.png"
+                                   Source="/Icons/History.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
@@ -145,9 +142,10 @@
                     <Grid Height="60"
                           Margin="20,10,20,10">
                         <RadioButton Name="Setting"
+                                     Tag="3"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
-                                     Command="{Binding SettingViewCommand}"/>
+                                     Click="NavigateMainContent"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
@@ -156,7 +154,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="1"
-                                   Source="/Icon/Setting.png"
+                                   Source="/Icons/Setting.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
@@ -178,26 +176,29 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-
-                    <TextBox Grid.Row="1"
-                         VerticalContentAlignment="Stretch"
-                         HorizontalContentAlignment="Stretch"
-                         Style="{StaticResource SearchBoxStyle}"/>
                     
-                    <Image Grid.Row="1"
-                           Source="/Icon/Search.png"
-                           Width="24" Height="24"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
-                           Margin="8,0,0,0"/>
+                    <TextBox Name="SearchBox"
+                             Grid.Row="1"
+                             VerticalContentAlignment="Stretch"
+                             HorizontalContentAlignment="Stretch"
+                             Style="{StaticResource SearchBoxStyle}"
+                             PreviewKeyDown="EnterSearch"/>
+                    <Button Grid.Row="1"
+                            Width="24" Height="24"
+                            HorizontalAlignment="Left"
+                            Margin="10,0,0,0"
+                            Click="Button_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Icons/Search.png"/>
+                        </Button.Background>
+                    </Button>
                 </Grid>
 
                 <Button Grid.Column="1"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Width="40" Height="40"
-                        Style="{StaticResource RoundedButton}"
-                        Click="ProfileButton_Click">
+                        Style="{StaticResource RoundedButton}">
                     <Button.Background>
                         <ImageBrush ImageSource="https://cdn.myanimelist.net/images/userimages/8157198.jpg"/>
                     </Button.Background>
@@ -205,15 +206,16 @@
 
             </Grid>
 
-            <ContentControl Grid.Column="1"
-                                Grid.Row="2"
-                                Content="{Binding CurrentView}"/>
+            <ContentControl x:Name="MainContent"
+                            Grid.Column="1"
+                            Grid.Row="2"/>
 
         </Grid>
 
         <Frame Grid.Row="1"
-               x:Name="MainFrame"
-               NavigationUIVisibility="Hidden"/>
+               x:Name="UserProfileFrame"
+               NavigationUIVisibility="Hidden"
+               Visibility="Collapsed"/>
 
     </Grid>
 </Window>
