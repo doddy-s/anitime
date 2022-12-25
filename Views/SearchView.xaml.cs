@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using JikanDotNet;
 
 namespace Kelompok01.Views
 {
@@ -22,52 +24,60 @@ namespace Kelompok01.Views
     /// </summary>
     public partial class SearchView : UserControl
     {
-        List<Anime> animes;
-        Anime currentAnime;
+        ObservableCollection<JikanDotNet.Anime> SearchResult;
+        JikanDotNet.Anime SelectedAnime;
 
         public SearchView(string keyWord)
         {
             InitializeComponent();
-            _ = FillAnimes(keyWord);
+            _ = FillSearchResult(keyWord);
             NumAnimeFound.Content = "Search value for " + keyWord;
         }
 
-        private async Task FillAnimes(string keyWord)
+        private async Task FillSearchResult(string keyWord)
         {
-            animes = await App.client.SearchAsync(keyWord);
-            GetDynamicWrapPanel();
+            AnimeSearchConfig animeSearchConfig = new AnimeSearchConfig
+            {
+                Query = keyWord,
+                Rating = 0
+            };
+            var seasonalAnimes = await App.JikanClient.SearchAnimeAsync(animeSearchConfig);
+            SearchResult = new ObservableCollection<JikanDotNet.Anime>(seasonalAnimes.Data);
+            GenerateAnimeTiles();
         }
 
-        private void GetDynamicWrapPanel()
+        private void GenerateAnimeTiles()
         {
-            if(animes.Count < 1) { return; }
+            if(SearchResult.Count < 1) { return; }
             Style style = this.FindResource("AnimeButtonStyle") as Style;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < SearchResult.Count; i++)
             {
-                Button button = new Button();
-                button.Width = 200;
-                button.Height = 300;
-                button.Margin = new Thickness(0, 0, 20, 20);
-                button.Tag = i;
-                button.Content = animes[i].Title;
-
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(animes[i].Image);
+                bitmap.UriSource = new Uri(SearchResult[i].Images.JPG.ImageUrl);
                 bitmap.EndInit();
 
-                button.Background = new ImageBrush(bitmap);
-                button.Click += new RoutedEventHandler(OpenAnimeInfoView_Click);
-                button.Style = style;
+                Button button = new Button
+                {
+                    Width = 200,
+                    Height = 300,
+                    Margin = new Thickness(0, 0, 20, 20),
+                    Tag = i,
+                    Content = SearchResult[i].Titles.First().Title,
+                    Background = new ImageBrush(bitmap),
+                    Style = style
+                };
 
+                button.Click += new RoutedEventHandler(OpenAnimeInfoView_Click);
+                
                 AnimeTilesWrapPanel.Children.Add(button);
             }
         }
 
         private void OpenAnimeInfoView_Click(object sender, RoutedEventArgs e)
         {
-            currentAnime = animes[(int)(sender as Button).Tag];
-            SearchFrame.Navigate(new AnimeInfoView(currentAnime.Id));
+            SelectedAnime = SearchResult[(int)(sender as Button).Tag];
+            SearchFrame.Navigate(new AnimeInfoView(SelectedAnime));
             NavigationPanel.Visibility = Visibility.Visible;
         }
 
@@ -80,7 +90,7 @@ namespace Kelompok01.Views
 
         private void StreamButton_Click(object sender, RoutedEventArgs e)
         {
-            SearchFrame.Navigate(new AnimeEpisodesView(currentAnime.Id));
+            SearchFrame.Navigate(new StreamView(SelectedAnime.Titles.First().Title));
             StreamButton.Visibility = Visibility.Collapsed;
         }
     }

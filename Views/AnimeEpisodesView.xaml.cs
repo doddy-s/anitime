@@ -43,14 +43,20 @@ namespace Kelompok01.Views
             Style style = this.FindResource("WideButtonStyle") as Style;
             for (int i = 0; i < episodes.Count; i++)
             {
-                Grid grid = new Grid();
-                grid.Height = 60;
+                Grid grid = new Grid
+                {
+                    Height = 60,
+                    HorizontalAlignment= HorizontalAlignment.Stretch,
+                    Margin = new Thickness(0,0,10,0)
+                };
 
-                Button button = new Button();
-                button.HorizontalAlignment = HorizontalAlignment.Stretch;
-                button.Tag = i;
-                button.Content = "Episode " + Convert.ToString(i+1);
-                button.Style = style;
+                Button button = new Button
+                {
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    Tag = i,
+                    Content = "Episode " + Convert.ToString(i + 1),
+                    Style = style
+                };
                 button.Click += new RoutedEventHandler(PlayEpisode);
 
                 grid.Children.Add(button);

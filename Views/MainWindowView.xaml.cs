@@ -30,7 +30,7 @@ namespace Kelompok01.Views
             userControls.AddRange(new List<UserControl>
             {
                 new HomeView(),
-                new SearchView(null),
+                null,
                 new HistoryView(),
                 new SettingView()
             });
@@ -83,8 +83,8 @@ namespace Kelompok01.Views
         {
             if (e.Key == Key.Return)
             {
-                OpenSearch(SearchBox.Text);
-                e.Handled = true;
+                string query = (sender as TextBox).Text;
+                OpenSearch(query);
             }
         }
 
@@ -95,7 +95,7 @@ namespace Kelompok01.Views
             MainContent.Content = userControls[1];
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             OpenSearch(SearchBox.Text);
         }

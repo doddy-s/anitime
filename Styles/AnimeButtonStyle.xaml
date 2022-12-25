@@ -8,15 +8,51 @@
                     <ControlTemplate TargetType="Button">
                         <Grid Width="{TemplateBinding Width}"
                               Height="{TemplateBinding Height}">
+                            <Grid.Triggers>
+                                <EventTrigger RoutedEvent="Grid.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                             From="0.0" To="1.0" Duration="0:0:0.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Grid.Triggers>
                             <Border CornerRadius="16"
-                                    Background="{TemplateBinding Background}">
-                                <Label VerticalAlignment="Bottom"
-                                       HorizontalAlignment="Left"
-                                       Foreground="White"
-                                       FontFamily="/Font/#NTR"
-                                       FontSize="24"
-                                       Content="{TemplateBinding Content}"/>
-
+                                    Background="{TemplateBinding Background}"/>
+                            
+                            <Border CornerRadius="16"
+                                    Background="Black"
+                                    BorderThickness="0"
+                                    Opacity="0">
+                                <Border.Triggers>
+                                    <EventTrigger RoutedEvent="Border.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                             From="0.0" To="0.8" Duration="0:0:0.25"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Border.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                             From="0.8" To="0.0" Duration="0:0:0.5"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Border.Triggers>
+                                <TextBlock Name="AnimeTitle"
+                                           VerticalAlignment="Bottom"
+                                           HorizontalAlignment="Left"
+                                           Background="Transparent"
+                                           Foreground="White"
+                                           FontFamily="/Font/#NTR"
+                                           FontSize="24"
+                                           Text="{TemplateBinding Content}"
+                                           TextWrapping="Wrap"
+                                           Margin="4"/>
                             </Border>
                         </Grid>
                     </ControlTemplate>
