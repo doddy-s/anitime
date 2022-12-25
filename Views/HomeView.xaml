@@ -27,7 +27,7 @@
                         FontSize="16"
                         Background="#4D4D4D"
                         Style="{StaticResource RoundedButton}"/>
-                <Image Source="/Icon/Back.png"
+                <Image Source="/Icons/Back.png"
                        Width="24" Height="24"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
@@ -47,7 +47,7 @@
                         Background="#4D4D4D"
                         Style="{StaticResource RoundedButton}"/>
                 
-                <Image Source="/Icon/Stream.png"
+                <Image Source="/Icons/Stream.png"
                        Width="24" Height="24"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Right"
@@ -74,8 +74,7 @@
                 <WrapPanel Grid.Row="1"
                            VerticalAlignment="Top"
                            HorizontalAlignment="Left"
-                           x:Name="AnimeTilesWrapPanel">
-                </WrapPanel>
+                           x:Name="AnimeTilesWrapPanel"/>
             </Grid>
         </ScrollViewer>
 

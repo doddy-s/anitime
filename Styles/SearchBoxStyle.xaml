@@ -8,7 +8,6 @@
                     <Border Background="#4D4D4D"
                             CornerRadius="20">
                         <Grid>
-                            <Rectangle StrokeThickness="1"/>
                             <TextBox  Margin="40,0,0,0"
                                       BorderThickness="0"
                                       Background="Transparent"
@@ -16,7 +15,6 @@
                                       Foreground="DarkGray"
                                       FontFamily="/Font/#NTR"
                                       FontSize="14"
-                                      Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType=TextBox}}"
                                       x:Name="SearchTextBox"/>
                             <TextBlock IsHitTestVisible="False"
                                        Text="Search"
@@ -25,8 +23,7 @@
                                        Margin="45,0,0,0"
                                        FontFamily="/Font/#NTR"
                                        FontSize="14"
-                                       Foreground="White"
-                                       Grid.Column="1">
+                                       Foreground="White">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>

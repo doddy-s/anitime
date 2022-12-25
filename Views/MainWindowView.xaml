@@ -11,7 +11,8 @@
         MinHeight="540" MinWidth="960"
         WindowStartupLocation="CenterScreen"
         Title="anitime" Height="720" Width="1280"
-        Background="#222222">
+        Background="#222222"
+        FontFamily="Jetbrains Mono">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -60,36 +61,29 @@
 
             <Grid Grid.Row="2"
               Margin="10,0,10,0">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="320"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="60"/>
-                </Grid.RowDefinitions>
-
-                <StackPanel>
+                <StackPanel VerticalAlignment="Stretch">
                     <Grid Height="60"
                           Margin="20,10,20,10">
-                        <RadioButton Name="Home"
-                                     Tag="0"
+                        <RadioButton Tag="0"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
                                      IsChecked="True"
                                      Click="NavigateMainContent"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="16"/>
-                                <ColumnDefinition Width="5*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Image Grid.Column="1"
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    IsHitTestVisible="False">
+                            <Image Name="HomeIcon"
+                                   Grid.Column="1"
                                    Source="/Icons/Home.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Margin="0,0,0,5"/>
-                        </Grid>
+                                   HorizontalAlignment="Center">
+                            </Image>
+                            <Label Content="Home"
+                                   FontSize="16"
+                                   Foreground="White"/>
+                        </StackPanel>
 
                     </Grid>
 
@@ -100,66 +94,61 @@
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
                                      Click="NavigateMainContent"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="16"/>
-                                <ColumnDefinition Width="5*"/>
-                            </Grid.ColumnDefinitions>
-
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    IsHitTestVisible="False">
                             <Image Grid.Column="1"
                                    Source="/Icons/Search.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Margin="0,0,0,5"/>
-                        </Grid>
+                                   HorizontalAlignment="Center"/>
+                            <Label Content="Search"
+                                   FontSize="16"
+                                   Foreground="White"/>
+                        </StackPanel>
                     </Grid>
 
                     <Grid Height="60"
                           Margin="20,10,20,10">
-                        <RadioButton Name="History"
-                                     Tag="2"
+                        <RadioButton Tag="2"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
                                      Click="NavigateMainContent"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="16"/>
-                                <ColumnDefinition Width="5*"/>
-                            </Grid.ColumnDefinitions>
-
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    IsHitTestVisible="False">
                             <Image Grid.Column="1"
                                    Source="/Icons/History.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Margin="0,0,0,5"/>
-                        </Grid>
+                                   HorizontalAlignment="Center"/>
+                            <Label Content="History"
+                                   FontSize="16"
+                                   Foreground="White"/>
+                        </StackPanel>
                     </Grid>
 
                     <Grid Height="60"
                           Margin="20,10,20,10">
-                        <RadioButton Name="Setting"
-                                     Tag="3"
+                        <RadioButton Tag="3"
                                      GroupName="MenuButtons"
                                      Style="{StaticResource MenuButtonStyle}"
                                      Click="NavigateMainContent"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="16"/>
-                                <ColumnDefinition Width="5*"/>
-                            </Grid.ColumnDefinitions>
-
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    IsHitTestVisible="False">
                             <Image Grid.Column="1"
                                    Source="/Icons/Setting.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Margin="0,0,0,5"/>
-                        </Grid>
+                                   HorizontalAlignment="Center"/>
+                            <Label Content="Setting"
+                                   FontSize="16"
+                                   Foreground="White"/>
+                        </StackPanel>
                     </Grid>
                 </StackPanel>
             </Grid>
@@ -176,18 +165,45 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
-                    <TextBox Name="SearchBox"
-                             Grid.Row="1"
-                             VerticalContentAlignment="Stretch"
-                             HorizontalContentAlignment="Stretch"
-                             Style="{StaticResource SearchBoxStyle}"
-                             PreviewKeyDown="EnterSearch"/>
+
+                    <Border Grid.Row="1"
+                            CornerRadius="20"
+                            Background="#4d4d4d">
+                        <Grid>
+                            <TextBlock Text="Search"
+                                       Margin="42,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Foreground="White">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                            <TextBox Name="SearchBox"
+                                     KeyDown="EnterSearch"
+                                     Background="Transparent"
+                                     Foreground="White"
+                                     Margin="40,0,30,0"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"/>
+
+                        </Grid>
+
+                    </Border>
+
                     <Button Grid.Row="1"
                             Width="24" Height="24"
                             HorizontalAlignment="Left"
                             Margin="10,0,0,0"
-                            Click="Button_Click">
+                            Click="SearchButton_Click"
+                            BorderThickness="0">
                         <Button.Background>
                             <ImageBrush ImageSource="/Icons/Search.png"/>
                         </Button.Background>

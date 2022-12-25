@@ -74,8 +74,7 @@
                 <WrapPanel Grid.Row="1"
                            VerticalAlignment="Top"
                            HorizontalAlignment="Left"
-                           x:Name="AnimeTilesWrapPanel">
-                </WrapPanel>
+                           x:Name="AnimeTilesWrapPanel"/>
             </Grid>
         </ScrollViewer>
 

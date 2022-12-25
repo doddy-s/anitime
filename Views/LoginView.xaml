@@ -28,7 +28,7 @@
                     FontSize="16"
                     Background="#4D4D4D"
                     Style="{StaticResource RoundedButton}" Click="BackButton_Click"/>
-            <Image Source="/Icon/Back.png"
+            <Image Source="/Icons/Back.png"
                    Width="24" Height="24"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
@@ -95,7 +95,7 @@
                          Style="{StaticResource UsernameBoxStyle}"/>
 
                 <Image Grid.Row="1"
-                       Source="/Icon/UserName1.png"
+                       Source="/Icons/UserName1.png"
                        Width="24" Height="24"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
@@ -109,7 +109,7 @@
                              Style="{StaticResource PasswordBoxStyle}"/>
 
                 <Image Grid.Row="1"
-                           Source="/Icon/Lock1.png"
+                           Source="/Icons/Lock1.png"
                            Width="24" Height="24"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"

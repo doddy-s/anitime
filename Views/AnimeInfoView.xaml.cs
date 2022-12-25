@@ -1,4 +1,5 @@
 ﻿using AnimeDl.Models;
+using JikanDotNet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,28 +22,23 @@ namespace Kelompok01.Views
     /// </summary>
     public partial class AnimeInfoView : Page
     {
-        Anime anime;
-        public AnimeInfoView(string animeId)
+        JikanDotNet.Anime anime;
+        public AnimeInfoView(JikanDotNet.Anime anime)
         {
             InitializeComponent();
             this.DataContext = this;
-            _ = getInfo(animeId);
-        }
-
-        private async Task getInfo(string animeId)
-        {
-            anime = await App.client.GetAnimeInfoAsync(animeId);
+            this.anime = anime;
             setInfo();
         }
 
         public void setInfo()
         {
-            AnimeName.Content = anime.Title;
-            AnimeDesc.Text = anime.Summary;
-            //AnimePic.Background = new ImageBrush(anime.bitmapImage);
+            AnimeName.Content = anime.Titles.First().Title;
+            AnimeDesc.Text = anime.Synopsis;
+
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri(anime.Image);
+            bitmap.UriSource = new Uri(anime.Images.JPG.ImageUrl);
             bitmap.EndInit();
             AnimePic.Background = new ImageBrush(bitmap);
         }
