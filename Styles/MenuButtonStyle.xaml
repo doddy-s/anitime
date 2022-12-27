@@ -15,7 +15,7 @@
                                            HorizontalAlignment="Center"
                                            Margin="28,0,0,0"
                                            Foreground="White"
-                                           FontFamily="/Font/#NTR"
+                                           FontFamily="/Fonts/#NTR"
                                            FontSize="20"/>
                             </Border>
                         </Grid>

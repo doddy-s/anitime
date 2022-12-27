@@ -25,7 +25,6 @@ namespace Kelompok01.Views
     public partial class SearchView : UserControl
     {
         ObservableCollection<JikanDotNet.Anime> SearchResult;
-        JikanDotNet.Anime SelectedAnime;
 
         public SearchView(string keyWord)
         {
@@ -41,8 +40,8 @@ namespace Kelompok01.Views
                 Query = keyWord,
                 Rating = 0
             };
-            var seasonalAnimes = await App.JikanClient.SearchAnimeAsync(animeSearchConfig);
-            SearchResult = new ObservableCollection<JikanDotNet.Anime>(seasonalAnimes.Data);
+            var _searchResult = await App.JikanClient.SearchAnimeAsync(animeSearchConfig);
+            SearchResult = new ObservableCollection<JikanDotNet.Anime>(_searchResult.Data);
             GenerateAnimeTiles();
         }
 
@@ -76,22 +75,7 @@ namespace Kelompok01.Views
 
         private void OpenAnimeInfoView_Click(object sender, RoutedEventArgs e)
         {
-            SelectedAnime = SearchResult[(int)(sender as Button).Tag];
-            SearchFrame.Navigate(new AnimeInfoView(SelectedAnime));
-            NavigationPanel.Visibility = Visibility.Visible;
-        }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            SearchFrame.Content = null;
-            NavigationPanel.Visibility = Visibility.Collapsed;
-            StreamButton.Visibility = Visibility.Visible;
-        }
-
-        private void StreamButton_Click(object sender, RoutedEventArgs e)
-        {
-            SearchFrame.Navigate(new StreamView(SelectedAnime.Titles.First().Title));
-            StreamButton.Visibility = Visibility.Collapsed;
+            SearchFrame.Navigate(new AnimeInfoView(SearchResult[(int)(sender as Button).Tag], SearchFrame));
         }
     }
 }

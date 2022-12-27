@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JikanDotNet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +21,30 @@ namespace Kelompok01.Views
     /// </summary>
     public partial class LoginView : Page
     {
-        public LoginView()
+        UserProfile userProfile = new UserProfile();
+        Frame frame;
+        public LoginView(Frame frame)
         {
             InitializeComponent();
+            this.frame = frame;
+            this.frame.Visibility = Visibility.Visible;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            App.UserProfileFrame.Content = null;
+            frame.Content = null;
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            App.UserProfileFrame.Navigate(new UserProfileView());
+            GetProfile(UsernameBox.Text).Wait();
+            frame.Navigate(new UserProfileView(userProfile, frame));
+        }
+
+        private async Task GetProfile(string username)
+        {
+            var _userProfile = await App.JikanClient.GetUserProfileAsync(username);
+            userProfile = _userProfile.Data;
         }
     }
 }

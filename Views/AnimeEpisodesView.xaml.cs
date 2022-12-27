@@ -24,11 +24,13 @@ namespace Kelompok01.Views
         List<Episode> episodes;
         List<VideoServer> servers;
         List<Video> videos;
-        public AnimeEpisodesView(string animeId)
+        Frame frame;
+        public AnimeEpisodesView(string animeId, Frame frame)
         {
             InitializeComponent();
             AnimeName.Content = animeId;
             _ = getEpisodes(animeId);
+            this.frame = frame;
         }
 
         private async Task getEpisodes(string animeId)
@@ -75,6 +77,11 @@ namespace Kelompok01.Views
             videos = await App.client.GetVideosAsync(servers[4]);
             string vidUrl = "/C mpv " + videos[0].VideoUrl;
             System.Diagnostics.Process.Start("CMD.exe", vidUrl);
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            frame.GoBack();
         }
     }
 }

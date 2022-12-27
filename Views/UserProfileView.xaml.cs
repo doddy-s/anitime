@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JikanDotNet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,28 @@ namespace Kelompok01.Views
     /// </summary>
     public partial class UserProfileView : Page
     {
-        public UserProfileView()
+        UserProfile userProfile;
+        Frame frame;
+        public UserProfileView(UserProfile userProfile ,Frame frame)
         {
             InitializeComponent();
+            this.frame = frame;
+            this.userProfile = userProfile;
+            SetComponents();
+        }
+
+        private void SetComponents()
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(userProfile.Images.JPG.ImageUrl);
+            bitmap.EndInit();
+            UserImage.Background = new ImageBrush(bitmap);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            App.UserProfileFrame.Content = null;
+            frame = null;
         }
     }
 }

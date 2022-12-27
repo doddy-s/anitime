@@ -26,7 +26,6 @@ namespace Kelompok01.Views
     public partial class HomeView : UserControl
     {
         ObservableCollection<JikanDotNet.Anime> SeasonalAnimes;
-        JikanDotNet.Anime SelectedAnime;
 
         public HomeView()
         {
@@ -72,22 +71,7 @@ namespace Kelompok01.Views
 
         private void OpenAnimeInfoView_Click(object sender, RoutedEventArgs e)
         {
-            SelectedAnime = SeasonalAnimes[(int)(sender as Button).Tag];
-            HomeFrame.Navigate(new AnimeInfoView(SelectedAnime));
-            NavigationPanel.Visibility = Visibility.Visible;
-        }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            HomeFrame.Content = null;
-            NavigationPanel.Visibility = Visibility.Collapsed;
-            StreamButton.Visibility = Visibility.Visible;
-        }
-
-        private void StreamButton_Click(object sender, RoutedEventArgs e)
-        {
-            HomeFrame.Navigate(new StreamView(SelectedAnime.Titles.First().Title));
-            StreamButton.Visibility = Visibility.Collapsed;
+            HomeFrame.Navigate(new AnimeInfoView(SeasonalAnimes[(int)(sender as Button).Tag], HomeFrame));
         }
     }
 }

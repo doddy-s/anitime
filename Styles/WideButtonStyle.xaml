@@ -12,7 +12,7 @@
                                 <Label VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Foreground="White"
-                                       FontFamily="/Font/#NTR"
+                                       FontFamily="/Fonts/#NTR"
                                        FontSize="18"
                                        Content="{TemplateBinding Content}"/>
                             </Border>

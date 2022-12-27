@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kelompok01.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1040">
+             d:DesignHeight="600" d:DesignWidth="1040"
+             FontFamily="/Fonts/#NTR">
     <Grid Margin="0,0,10,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
@@ -13,7 +14,6 @@
         </Grid.RowDefinitions>
 
         <Label Content="Setting"
-               FontFamily="/Font/#NTR"
                FontSize="32"
                Foreground="White"/>
         

@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="690" d:DesignWidth="1280"
       Title="UserProfileView"
-      Background="#222222">
+      Background="#222222"
+      FontFamily="/Fonts/#NTR">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -22,7 +23,6 @@
                     HorizontalAlignment="Left"
                     Content="Back"
                     Foreground="White"
-                    FontFamily="/Font/#NTR"
                     FontSize="16"
                     Background="#4D4D4D"
                     Style="{StaticResource RoundedButton}"
@@ -49,21 +49,16 @@
                     <Border CornerRadius="16"
                             Background="#4D4D4D">
                         <StackPanel>
-                            <Border x:Name="UserImage"
+                            <Border Name="UserImage"
                                     Width="300" Height="300"
                                     Margin="10"
                                     VerticalAlignment="Top"
                                     CornerRadius="256">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="https://cdn.myanimelist.net/images/userimages/8157198.jpg"/>
-                                </Border.Background>
                             </Border>
 
                             <Label x:Name="UserName"
-                                   Content="User_Name"
                                    HorizontalAlignment="Center"
                                    Foreground="White"
-                                   FontFamily="/Font/#NTR"
                                    FontSize="32"/>
 
                             <Grid Margin="20,0,20,0">
@@ -75,14 +70,12 @@
                                 <Label Content="Joined"
                                        HorizontalAlignment="Left"
                                        Foreground="White"
-                                       FontFamily="/Font/#NTR"
                                        FontSize="16"/>
 
                                 <Label Grid.Column="1"
-                                       Content="DD-MM-YYY"
+                                       Name="Joined"
                                        HorizontalAlignment="Right"
                                        Foreground="White"
-                                       FontFamily="/Font/#NTR"
                                        FontSize="16"/>
                             </Grid>
 
@@ -95,14 +88,12 @@
                                 <Label Content="Last Online"
                                        HorizontalAlignment="Left"
                                        Foreground="White"
-                                       FontFamily="/Font/#NTR"
                                        FontSize="16"/>
 
                                 <Label Grid.Column="1"
-                                       Content="X Day Ago"
+                                       Name="LastOnline"
                                        HorizontalAlignment="Right"
                                        Foreground="White"
-                                       FontFamily="/Font/#NTR"
                                        FontSize="16"/>
                             </Grid>
                         </StackPanel>
@@ -121,27 +112,22 @@
                     <Label Content="Statistic"
                                    HorizontalAlignment="Left"
                                    Foreground="White"
-                                   FontFamily="/Font/#NTR"
                                    FontSize="32"/>
                     <Label Content="Watching"
                                    HorizontalAlignment="Left"
                                    Foreground="White"
-                                   FontFamily="/Font/#NTR"
                                    FontSize="16"/>
                     <Label Content="Complete"
                                    HorizontalAlignment="Left"
                                    Foreground="White"
-                                   FontFamily="/Font/#NTR"
                                    FontSize="16"/>
                     <Label Content="On Hold"
                                    HorizontalAlignment="Left"
                                    Foreground="White"
-                                   FontFamily="/Font/#NTR"
                                    FontSize="16"/>
                     <Label Content="Dropped"
                                    HorizontalAlignment="Left"
                                    Foreground="White"
-                                   FontFamily="/Font/#NTR"
                                    FontSize="16"/>
                 </StackPanel>
 
@@ -153,12 +139,9 @@
                         <Border CornerRadius="16"
                                 Background="#4D4D4D">
                             <TextBlock Foreground="White"
-                                       FontFamily="/Font/#NTR"
                                        FontSize="48"
                                        TextWrapping="Wrap"
-                                       TextAlignment="Center">
-                                Congratulations!!!! You wasted xx,x day of your life watching animes.
-                            </TextBlock>
+                                       TextAlignment="Center"/>
                         </Border>
                     </Grid>
                 </Grid>

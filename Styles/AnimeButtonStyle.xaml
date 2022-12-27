@@ -12,8 +12,18 @@
                                 <EventTrigger RoutedEvent="Grid.Loaded">
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                                             From="0.0" To="1.0" Duration="0:0:0.5"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="Width"
+                                                             From="0.0" To="{TemplateBinding Width}" Duration="0:0:0.8">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CircleEase EasingMode="EaseInOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetProperty="Height"
+                                                             From="0.0" To="{TemplateBinding Height}" Duration="0:0:0.8">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CircleEase EasingMode="EaseInOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -48,11 +58,13 @@
                                            HorizontalAlignment="Left"
                                            Background="Transparent"
                                            Foreground="White"
-                                           FontFamily="/Font/#NTR"
+                                           FontFamily="/Fonts/#NTR"
                                            FontSize="24"
                                            Text="{TemplateBinding Content}"
                                            TextWrapping="Wrap"
-                                           Margin="4"/>
+                                           Margin="4"
+                                           LineStackingStrategy="BlockLineHeight"
+                                           LineHeight="24"/>
                             </Border>
                         </Grid>
                     </ControlTemplate>

@@ -7,39 +7,28 @@
       mc:Ignorable="d" 
       d:DesignHeight="690" d:DesignWidth="1280"
       Title="LoginView"
-      Background="#222222">
-
+      Background="#222222"
+      FontFamily="/Fonts/#NTR">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
+        <Button Name="BackButton"
+                Style="{StaticResource BackButtonStyle}"
+                Height="40" Width="120"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="20,0,0,0"
+                Click="BackButton_Click"/>
 
-        <Grid HorizontalAlignment="Left"
-              VerticalAlignment="Top"
-              Margin="10,10,10,10">
-            <Button Grid.Column="0"
-                    x:Name="BackButton"
-                    Width="140" Height="40"
-                    Content="Back"
-                    Foreground="White"
-                    FontFamily="/Font/#NTR"
-                    FontSize="16"
-                    Background="#4D4D4D"
-                    Style="{StaticResource RoundedButton}" Click="BackButton_Click"/>
-            <Image Source="/Icons/Back.png"
-                   Width="24" Height="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Margin="8,0,0,0"/>
-        </Grid>
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="4*"/>
-                <RowDefinition Height="110"/>
-                <RowDefinition Height="48"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="48"/>
                 <RowDefinition Height="90"/>
             </Grid.RowDefinitions>
@@ -47,7 +36,7 @@
             <Grid Width="300" Height="300"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
-                <Image Source="/Icon/Logo_HD.png"
+                <Image Source="/Icons/Logo_HD.png"
                    Height="240"/>
             </Grid>
             
@@ -67,14 +56,14 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
                         <Label VerticalAlignment="Center"
                                HorizontalAlignment="Center"
-                               Content="Login using your MAL Account"
+                               Content="Provide your MAL Account's Username"
                                FontSize="14"
                                Foreground="White"/>
                     </Grid>
@@ -90,9 +79,32 @@
 
             <Grid Grid.Row="2"
                   Margin="45,10,45,0">
-                <TextBox VerticalContentAlignment="Stretch"
-                         HorizontalContentAlignment="Stretch"
-                         Style="{StaticResource UsernameBoxStyle}"/>
+                <Border Grid.Row="1"
+                            CornerRadius="20"
+                            Background="#4d4d4d">
+                    <Grid>
+                        <TextBlock Text="Username"
+                                       Margin="42,0,0,0"
+                                       VerticalAlignment="Center"
+                                       FontSize="18"
+                                       Foreground="White">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=UsernameBox}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                        <TextBox Name="UsernameBox"
+                                 Style="{DynamicResource TextBoxStyle}"/>
+                    </Grid>
+
+                </Border>
 
                 <Image Grid.Row="1"
                        Source="/Icons/UserName1.png"
@@ -101,20 +113,7 @@
                        HorizontalAlignment="Left"
                        Margin="8,0,0,0"/>
             </Grid>
-
-            <Grid Grid.Row="3"
-                  Margin="45,10,45,0">
-                <PasswordBox VerticalContentAlignment="Stretch"
-                             HorizontalContentAlignment="Stretch"
-                             Style="{StaticResource PasswordBoxStyle}"/>
-
-                <Image Grid.Row="1"
-                           Source="/Icons/Lock1.png"
-                           Width="24" Height="24"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
-                           Margin="8,0,0,0"/>
-            </Grid>
+            
             <Grid Grid.Row="4"
                   Margin="45,0,45,0">
                 <Button Grid.Column="0"
@@ -122,7 +121,6 @@
                         Width="140" Height="40"
                         Content="Login"
                         Foreground="White"
-                        FontFamily="/Font/#NTR"
                         FontSize="16"
                         Background="#4D4D4D"
                         Style="{StaticResource RoundedButton}" Click="LoginButton_Click"/>

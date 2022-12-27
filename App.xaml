@@ -7,13 +7,13 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/MenuButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Styles/SearchBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBoxStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/RoundedButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/AnimeButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Styles/UsernameBoxStyle.xaml"/>
-                <ResourceDictionary Source="/Styles/PasswordBoxStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/ScrollBarApik.xaml"/>
                 <ResourceDictionary Source="/Styles/WideButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/BackButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/StreamButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
