@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         Title="anitime" Height="720" Width="1280"
         Background="#222222"
-        FontFamily="Jetbrains Mono">
+        FontFamily="/Fonts/#NTR">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -73,15 +73,14 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     IsHitTestVisible="False">
-                            <Image Name="HomeIcon"
-                                   Grid.Column="1"
+                            <Image Grid.Column="1"
                                    Source="/Icons/Home.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center">
                             </Image>
                             <Label Content="Home"
-                                   FontSize="16"
+                                   FontSize="18"
                                    Foreground="White"/>
                         </StackPanel>
 
@@ -104,7 +103,7 @@
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
                             <Label Content="Search"
-                                   FontSize="16"
+                                   FontSize="18"
                                    Foreground="White"/>
                         </StackPanel>
                     </Grid>
@@ -125,7 +124,7 @@
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
                             <Label Content="History"
-                                   FontSize="16"
+                                   FontSize="18"
                                    Foreground="White"/>
                         </StackPanel>
                     </Grid>
@@ -146,7 +145,7 @@
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
                             <Label Content="Setting"
-                                   FontSize="16"
+                                   FontSize="18"
                                    Foreground="White"/>
                         </StackPanel>
                     </Grid>
@@ -173,6 +172,7 @@
                             <TextBlock Text="Search"
                                        Margin="42,0,0,0"
                                        VerticalAlignment="Center"
+                                       FontSize="18"
                                        Foreground="White">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -188,11 +188,7 @@
 
                             <TextBox Name="SearchBox"
                                      KeyDown="EnterSearch"
-                                     Background="Transparent"
-                                     Foreground="White"
-                                     Margin="40,0,30,0"
-                                     BorderThickness="0"
-                                     VerticalAlignment="Center"/>
+                                     Style="{DynamicResource TextBoxStyle}"/>
 
                         </Grid>
 
@@ -214,7 +210,8 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Width="40" Height="40"
-                        Style="{StaticResource RoundedButton}">
+                        Style="{StaticResource RoundedButton}"
+                        Click="ProfileButton_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="https://cdn.myanimelist.net/images/userimages/8157198.jpg"/>
                     </Button.Background>

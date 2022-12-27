@@ -7,9 +7,22 @@
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="1040"
       Title="StreamView"
-      Background="#222222">
+      Background="#222222"
+      FontFamily="/Fonts/#NTR">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Button Name="BackButton"
+                    Style="{StaticResource BackButtonStyle}"
+                    Height="40" Width="120"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Click="BackButton_Click"/>
+
         <ScrollViewer Grid.Row="1"
                       Margin="0,4,0,0"
                       VerticalScrollBarVisibility="Auto">
@@ -20,7 +33,6 @@
                 </Grid.RowDefinitions>
 
                 <Label x:Name="NumAnimeFound"
-                       FontFamily="/Font/#NTR"
                        FontSize="32"
                        Foreground="White"/>
 
@@ -31,8 +43,5 @@
                 </WrapPanel>
             </Grid>
         </ScrollViewer>
-
-        <Frame Name="AnimeEpisodesViewFrame"
-               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

@@ -23,11 +23,13 @@ namespace Kelompok01.Views
     public partial class AnimeInfoView : Page
     {
         JikanDotNet.Anime anime;
-        public AnimeInfoView(JikanDotNet.Anime anime)
+        Frame frame;
+        public AnimeInfoView(JikanDotNet.Anime anime, Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
             this.anime = anime;
+            this.frame = frame;
             setInfo();
         }
 
@@ -43,5 +45,15 @@ namespace Kelompok01.Views
             AnimePic.Background = new ImageBrush(bitmap);
         }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = null;
+            while(frame.CanGoBack) { frame.RemoveBackEntry(); }
+        }
+
+        private void StreamButton_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new StreamView(anime.Titles.First().Title, frame);
+        }
     }
 }

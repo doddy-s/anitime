@@ -139,11 +139,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\MenuButtonStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Styles\BackButtonStyle.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\PasswordBoxStyle.xaml">
+    <Page Include="Styles\MenuButtonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -155,11 +155,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\SearchBoxStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Styles\StreamButtonStyle.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\UsernameBoxStyle.xaml">
+    <Page Include="Styles\TextBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -25,8 +25,6 @@ namespace Kelompok01.Views
         {
             InitializeComponent();
 
-            App.UserProfileFrame = this.UserProfileFrame;
-
             userControls.AddRange(new List<UserControl>
             {
                 new HomeView(),
@@ -70,7 +68,7 @@ namespace Kelompok01.Views
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            App.UserProfileFrame.Navigate(new LoginView());
+            UserProfileFrame.Navigate(new LoginView(UserProfileFrame));
         }
 
         private void NavigateMainContent(object sender, RoutedEventArgs e)

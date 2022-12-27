@@ -21,13 +21,16 @@ namespace Kelompok01.Views
     /// </summary>
     public partial class StreamView : Page
     {
-        List<AnimeDl.Models.Anime> animes;
+        List<AnimeDl.Models.Anime> animes = new List<AnimeDl.Models.Anime>();
+        Frame frame;
 
-        public StreamView(string keyWord)
+        public StreamView(string keyWord, Frame frame)
         {
             InitializeComponent();
+            this.frame = frame;
+
             _ = FillAnimes(keyWord);
-            NumAnimeFound.Content = "Pick the anime!";
+            NumAnimeFound.Content = "Animes in streaming entries";
         }
 
         private async Task FillAnimes(string keyWord)
@@ -64,7 +67,12 @@ namespace Kelompok01.Views
 
         private void OpenAnimeEpisodesView_Click(object sender, RoutedEventArgs e)
         {
-            AnimeEpisodesViewFrame.Navigate(new AnimeEpisodesView(animes[(int)(sender as Button).Tag].Id));
+            frame.Navigate(new AnimeEpisodesView(animes[(int)(sender as Button).Tag].Id, frame));
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            frame.GoBack();
         }
     }
 }

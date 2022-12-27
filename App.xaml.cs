@@ -15,6 +15,5 @@ namespace Kelompok01
     {
         public static Jikan JikanClient = new Jikan();
         public static AnimeClient client = new AnimeClient(AnimeDl.Scrapers.AnimeSites.GogoAnime);
-        public static Frame UserProfileFrame;
     }
 }
