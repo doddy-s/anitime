@@ -16,132 +16,151 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid>
-            <Button x:Name="BackButton"
-                    Width="140" Height="40"
-                    Margin="20,10,10,10"
-                    HorizontalAlignment="Left"
-                    Content="Back"
-                    Foreground="White"
-                    FontSize="16"
-                    Background="#4D4D4D"
-                    Style="{StaticResource RoundedButton}"
-                    Click="BackButton_Click"/>
-            
-            <Image Source="/Icon/Back.png"
-                   Width="24" Height="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Margin="28,0,0,0"/>
-        </Grid>
+        <Button Name="BackButton"
+                Style="{StaticResource BackButtonStyle}"
+                Height="40" Width="120"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="20,0,0,0"
+                Click="BackButton_Click"/>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="360"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="360*"/>
+                <ColumnDefinition Width="920*"/>
             </Grid.ColumnDefinitions>
 
 
-            <Grid>
-                <Grid Width="320" Height="500"
-                          Background="Transparent"
-                          VerticalAlignment="Top">
-                    <Border CornerRadius="16"
-                            Background="#4D4D4D">
+            <Grid Margin="20"
+                    Background="Transparent"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch">
+                <Border CornerRadius="16"
+                        Background="#4D4D4D">
+                    <Grid VerticalAlignment="Stretch">
                         <StackPanel>
-                            <Border Name="UserImage"
-                                    Width="300" Height="300"
-                                    Margin="10"
+                            <Border Margin="10"
                                     VerticalAlignment="Top"
+                                    HorizontalAlignment="Stretch"
                                     CornerRadius="256">
+                                <Grid>
+                                    <Image Name="UserImage"
+                                        Stretch="Uniform"/>
+                                </Grid>
+                                
                             </Border>
 
                             <Label x:Name="UserName"
-                                   HorizontalAlignment="Center"
-                                   Foreground="White"
-                                   FontSize="32"/>
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="32"/>
+                        </StackPanel>
 
-                            <Grid Margin="20,0,20,0">
+                        <StackPanel VerticalAlignment="Bottom">
+                            <Grid Margin="10,0,10,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
                                 <Label Content="Joined"
-                                       HorizontalAlignment="Left"
-                                       Foreground="White"
-                                       FontSize="16"/>
+                                        HorizontalAlignment="Left"
+                                        Foreground="White"
+                                        FontSize="16"/>
 
                                 <Label Grid.Column="1"
-                                       Name="Joined"
-                                       HorizontalAlignment="Right"
-                                       Foreground="White"
-                                       FontSize="16"/>
+                                        Name="Joined"
+                                        HorizontalAlignment="Right"
+                                        Foreground="White"
+                                        FontSize="16"/>
                             </Grid>
 
-                            <Grid Margin="20,0,20,0">
+                            <Grid Margin="10,0,10,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
                                 <Label Content="Last Online"
-                                       HorizontalAlignment="Left"
-                                       Foreground="White"
-                                       FontSize="16"/>
+                                        HorizontalAlignment="Left"
+                                        Foreground="White"
+                                        FontSize="16"/>
 
                                 <Label Grid.Column="1"
-                                       Name="LastOnline"
-                                       HorizontalAlignment="Right"
-                                       Foreground="White"
-                                       FontSize="16"/>
+                                        Name="LastOnline"
+                                        HorizontalAlignment="Right"
+                                        Foreground="White"
+                                        FontSize="16"/>
                             </Grid>
                         </StackPanel>
-                    </Border>
-                </Grid>
+                    </Grid>
+                </Border>
             </Grid>
-            
-            
 
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="280"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <StackPanel>
+
+
+            <Grid Grid.Column="1"
+                  Margin="20">
+                <StackPanel VerticalAlignment="Top">
                     <Label Content="Statistic"
-                                   HorizontalAlignment="Left"
-                                   Foreground="White"
-                                   FontSize="32"/>
-                    <Label Content="Watching"
-                                   HorizontalAlignment="Left"
-                                   Foreground="White"
-                                   FontSize="16"/>
-                    <Label Content="Complete"
-                                   HorizontalAlignment="Left"
-                                   Foreground="White"
-                                   FontSize="16"/>
-                    <Label Content="On Hold"
-                                   HorizontalAlignment="Left"
-                                   Foreground="White"
-                                   FontSize="16"/>
-                    <Label Content="Dropped"
-                                   HorizontalAlignment="Left"
-                                   Foreground="White"
-                                   FontSize="16"/>
+                            HorizontalAlignment="Left"
+                            Foreground="White"
+                            FontSize="32"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Watching"
+                               Foreground="White"
+                               FontSize="16"/>
+                        <Label Name="Watching"
+                               Foreground="White"
+                               FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Completed"
+                               Foreground="White"
+                               FontSize="16"/>
+                        <Label Name="Completed"
+                               Foreground="White"
+                               FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="On-Hold"
+                               Foreground="White"
+                               FontSize="16"/>
+                        <Label Name="Onhold"
+                               Foreground="White"
+                               FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Dropped"
+                               Foreground="White"
+                               FontSize="16"/>
+                        <Label Name="Dropped"
+                               Foreground="White"
+                               FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Plan to Watch"
+                               Foreground="White"
+                               FontSize="16"/>
+                        <Label Name="Plantowatch"
+                               Foreground="White"
+                               FontSize="16"/>
+                    </StackPanel>
                 </StackPanel>
 
-                <Grid Grid.Row="1">
-                    <Grid Height="220"
-                          Background="Transparent"
-                          VerticalAlignment="Top"
-                          HorizontalAlignment="Stretch">
+                    <Grid Grid.Row="1"
+                          VerticalAlignment="Bottom">
+                        <Grid Height="220"
+                              Background="Transparent"
+                              VerticalAlignment="Top"
+                              HorizontalAlignment="Stretch">
                         <Border CornerRadius="16"
-                                Background="#4D4D4D">
+                                    Background="#4D4D4D">
                             <TextBlock Foreground="White"
-                                       FontSize="48"
-                                       TextWrapping="Wrap"
-                                       TextAlignment="Center"/>
+                                           FontSize="48"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"/>
                         </Border>
                     </Grid>
                 </Grid>

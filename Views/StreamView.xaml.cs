@@ -43,7 +43,7 @@ namespace Kelompok01.Views
         {
             if (animes.Count < 1) { return; }
             Style style = this.FindResource("AnimeButtonStyle") as Style;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < animes.Count; i++)
             {
                 Button button = new Button();
                 button.Width = 200;

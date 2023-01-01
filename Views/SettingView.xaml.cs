@@ -24,7 +24,6 @@ namespace Kelompok01.Views
         {
             InitializeComponent();
             ShowSettings();
-
         }
 
         string[] settings = { "Notifikasi", "Bahasa", "Hapus Riwayat", "Ubah Tema Warna", "Log Out" };

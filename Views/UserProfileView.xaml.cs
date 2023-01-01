@@ -37,12 +37,25 @@ namespace Kelompok01.Views
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(userProfile.Images.JPG.ImageUrl);
             bitmap.EndInit();
-            UserImage.Background = new ImageBrush(bitmap);
+            UserImage.Source = bitmap;
+
+            UserName.Content = userProfile.Username;
+            Joined.Content = userProfile.Joined;
+            LastOnline.Content = userProfile.LastOnline;
+
+            /*
+            if(animeStatistics == null) { return; }
+            Watching.Content = animeStatistics.Watching;
+            Completed.Content = animeStatistics.Completed;
+            Onhold.Content = animeStatistics.OnHold;
+            Dropped.Content = animeStatistics.Dropped;
+            Plantowatch.Content = animeStatistics.PlanToWatch;
+            */
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            frame = null;
+            frame.Content = null;
         }
     }
 }

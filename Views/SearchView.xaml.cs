@@ -38,7 +38,7 @@ namespace Kelompok01.Views
             AnimeSearchConfig animeSearchConfig = new AnimeSearchConfig
             {
                 Query = keyWord,
-                Rating = 0
+                Rating = AnimeAgeRating.RX
             };
             var _searchResult = await App.JikanClient.SearchAnimeAsync(animeSearchConfig);
             SearchResult = new ObservableCollection<JikanDotNet.Anime>(_searchResult.Data);

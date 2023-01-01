@@ -8,8 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="1040"
              FontFamily="/Fonts/#NTR">
     <Grid>
-        <ScrollViewer Margin="0,4,0,0"
-                      VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="80"/>

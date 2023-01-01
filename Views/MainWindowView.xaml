@@ -8,7 +8,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip"
-        MinHeight="540" MinWidth="960"
+        MinHeight="648" MinWidth="1024"
         WindowStartupLocation="CenterScreen"
         Title="anitime" Height="720" Width="1280"
         Background="#222222"
@@ -62,7 +62,8 @@
             <Grid Grid.Row="2"
               Margin="10,0,10,0">
                 <StackPanel VerticalAlignment="Stretch">
-                    <Grid Height="60"
+                    <Grid Name="HomeButtonGrid"
+                          Height="60"
                           Margin="20,10,20,10">
                         <RadioButton Tag="0"
                                      GroupName="MenuButtons"
@@ -77,8 +78,7 @@
                                    Source="/Icons/Home.png"
                                    Width="16" Height="16"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center">
-                            </Image>
+                                   HorizontalAlignment="Center"/>
                             <Label Content="Home"
                                    FontSize="18"
                                    Foreground="White"/>

@@ -21,7 +21,6 @@ namespace Kelompok01.Views
     /// </summary>
     public partial class LoginView : Page
     {
-        UserProfile userProfile = new UserProfile();
         Frame frame;
         public LoginView(Frame frame)
         {
@@ -35,16 +34,25 @@ namespace Kelompok01.Views
             frame.Content = null;
         }
 
+        private void EnterSearch(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                string query = (sender as TextBox).Text;
+                _ = GetProfile(query);
+            }
+        }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            GetProfile(UsernameBox.Text).Wait();
-            frame.Navigate(new UserProfileView(userProfile, frame));
+            _ = GetProfile(UsernameBox.Text);
         }
 
         private async Task GetProfile(string username)
         {
             var _userProfile = await App.JikanClient.GetUserProfileAsync(username);
-            userProfile = _userProfile.Data;
+            if (_userProfile == null) { return; }
+            frame.Navigate(new UserProfileView(_userProfile.Data, frame));
         }
     }
 }
