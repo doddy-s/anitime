@@ -24,15 +24,14 @@ namespace Kelompok01.Views
         {
             InitializeComponent();
             ShowSettings();
-
         }
 
-        string[] settings = { "Notifikasi", "Bahasa", "Hapus Riwayat", "Ubah Tema Warna", "Log Out" };
+        string[] settings = {"Hapus Riwayat", "Log Out" };
 
         private void ShowSettings()
         {
             Style style = this.FindResource("WideButtonStyle") as Style;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 2; i++)
             {
                 Grid grid = new Grid();
                 grid.Height = 60;

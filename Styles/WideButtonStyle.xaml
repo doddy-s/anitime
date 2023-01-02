@@ -7,10 +7,11 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid Height="40">
-                            <Border CornerRadius="12"
+                            <Border CornerRadius="20"
                                     Background="#4D4D4D">
                                 <Label VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
+                                       Margin="10,0,0,5"
                                        Foreground="White"
                                        FontFamily="/Fonts/#NTR"
                                        FontSize="18"

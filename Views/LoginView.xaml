@@ -101,6 +101,7 @@
                         </TextBlock>
 
                         <TextBox Name="UsernameBox"
+                                 KeyDown="EnterSearch"
                                  Style="{DynamicResource TextBoxStyle}"/>
                     </Grid>
 

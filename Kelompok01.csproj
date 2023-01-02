@@ -131,6 +131,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\HistoryManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -209,6 +210,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AnimeHistory.cs" />
     <Compile Include="Views\AnimeEpisodesView.xaml.cs">
       <DependentUpon>AnimeEpisodesView.xaml</DependentUpon>
     </Compile>

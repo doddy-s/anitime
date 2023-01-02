@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Kelompok01.Views
 {
@@ -25,12 +26,14 @@ namespace Kelompok01.Views
         List<VideoServer> servers;
         List<Video> videos;
         Frame frame;
+        string animeId;
         public AnimeEpisodesView(string animeId, Frame frame)
         {
             InitializeComponent();
             AnimeName.Content = animeId;
             _ = getEpisodes(animeId);
             this.frame = frame;
+            this.animeId = animeId;
         }
 
         private async Task getEpisodes(string animeId)
@@ -49,7 +52,7 @@ namespace Kelompok01.Views
                 {
                     Height = 60,
                     HorizontalAlignment= HorizontalAlignment.Stretch,
-                    Margin = new Thickness(0,0,10,0)
+                    Margin = new Thickness(0,0,40,0)
                 };
 
                 Button button = new Button
@@ -68,6 +71,8 @@ namespace Kelompok01.Views
 
         private void PlayEpisode(object sender, RoutedEventArgs e)
         {
+            App.AnimeHistories.RemoveAll(p => p.AnimeId == animeId);
+            App.AnimeHistories.Add(new Models.AnimeHistory(animeId, (int)(sender as Button).Tag+1));
             _ = playEpisode(episodes[(int)(sender as Button).Tag]);
         }
 
@@ -81,7 +86,8 @@ namespace Kelompok01.Views
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            frame.GoBack();
+            if (frame.CanGoBack) frame.GoBack();
+            else frame.Content = null;
         }
     }
 }
