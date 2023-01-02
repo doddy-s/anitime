@@ -42,7 +42,7 @@ namespace Kelompok01.Views
             GenerateAnimeTiles();
         }
 
-        private void GenerateAnimeTiles()
+        private void GenerateAnimeTiles() // oxa was here wkwkwkwk
         {
             if (animes.Count < 1) { return; }
             Style style = this.FindResource("AnimeButtonStyle") as Style;
