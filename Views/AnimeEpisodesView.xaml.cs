@@ -71,7 +71,8 @@ namespace Kelompok01.Views
 
         private void PlayEpisode(object sender, RoutedEventArgs e)
         {
-            SaveHistory();
+            App.AnimeHistories.RemoveAll(p => p.AnimeId == animeId);
+            App.AnimeHistories.Add(new Models.AnimeHistory(animeId, (int)(sender as Button).Tag+1));
             _ = playEpisode(episodes[(int)(sender as Button).Tag]);
         }
 
@@ -87,13 +88,6 @@ namespace Kelompok01.Views
         {
             if (frame.CanGoBack) frame.GoBack();
             else frame.Content = null;
-        }
-
-        private void SaveHistory()
-        {
-            if (App.AnimeHistories.Contains(animeId)) App.AnimeHistories.Remove(animeId);
-            App.AnimeHistories.Add(animeId);
-            File.WriteAllLines("history.txt", App.AnimeHistories.ToArray());
         }
     }
 }

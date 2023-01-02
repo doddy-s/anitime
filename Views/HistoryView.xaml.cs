@@ -29,27 +29,18 @@ namespace Kelompok01.Views
         public HistoryView()
         {
             InitializeComponent();
-            ReadHistory();
             _ = FillAnimes();
         }
 
         private async Task FillAnimes()
         {
-            foreach (string i in App.AnimeHistories)
+            foreach (var i in App.AnimeHistories)
             {
-                var temp = await App.client.GetAnimeInfoAsync(i);
+                var temp = await App.client.GetAnimeInfoAsync(i.AnimeId);
                 animes.Add(temp);
             }
             GenerateAnimeTiles();
         }
-
-        private void ReadHistory()
-        {
-            string[] history = File.ReadAllLines("history.txt");
-            foreach(string i in history) App.AnimeHistories.Add(i);
-            App.AnimeHistories.Reverse();
-        }
-
 
         private void GenerateAnimeTiles()
         {
@@ -62,7 +53,7 @@ namespace Kelompok01.Views
                 button.Height = 300;
                 button.Margin = new Thickness(0, 0, 20, 20);
                 button.Tag = i;
-                button.Content = animes[i].Title;
+                button.Content = animes[i].Title + "\nLast Wached Episode : " + App.AnimeHistories[i].Episode;
 
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();

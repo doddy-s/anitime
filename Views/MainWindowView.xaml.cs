@@ -29,7 +29,7 @@ namespace Kelompok01.Views
             {
                 new HomeView(),
                 null,
-                new HistoryView(),
+                null,
                 new SettingView()
             });
 
@@ -74,6 +74,7 @@ namespace Kelompok01.Views
         private void NavigateMainContent(object sender, RoutedEventArgs e)
         {
             var tag = Convert.ToInt32((sender as RadioButton).Tag);
+            if (tag == 2) userControls[2] = new HistoryView();
             MainContent.Content = userControls[tag];
         }
 
