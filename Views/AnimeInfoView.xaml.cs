@@ -37,6 +37,7 @@ namespace Kelompok01.Views
         {
             AnimeName.Content = anime.Titles.First().Title;
             AnimeDesc.Text = anime.Synopsis;
+            //qotrun
 
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
