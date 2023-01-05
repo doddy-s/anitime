@@ -19,6 +19,7 @@ namespace Kelompok01.Views
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
+    /// Irfan was here
     public partial class LoginView : Page
     {
         Frame frame;
