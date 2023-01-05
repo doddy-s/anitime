@@ -13,6 +13,7 @@ using Kelompok01.API;
 
 namespace Kelompok01
 {
+    // Application
     public partial class App : Application
     {
         public static Jikan JikanClient = new Jikan();
