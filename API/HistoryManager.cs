@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 
 namespace Kelompok01.API
 {
+    //HistoryManager
     public class HistoryManager
     {
         public static void SaveHistory(List<AnimeHistory> list)
