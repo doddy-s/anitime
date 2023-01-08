@@ -27,10 +27,12 @@ namespace Kelompok01.Views
 
         private void DeleteHistoryButton_Click(object sender, RoutedEventArgs e)
         {
+            App.AnimeHistories.Clear();
         }
 
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
+            App.UserProfile = null;
         }
     }
 }

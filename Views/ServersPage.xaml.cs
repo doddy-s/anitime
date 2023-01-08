@@ -23,13 +23,15 @@ namespace Kelompok01.Views
     public partial class ServersPage : Page
     {
         string animeId;
+        int episodeNum;
         List<VideoServer> servers;
-        public ServersPage(Episode episode, string animeId)
+        public ServersPage(Episode episode, string animeId, int episodeNum)
         {
             InitializeComponent();
-            _ = GetServers(episode.Id);
             this.animeId = animeId;
+            this.episodeNum = episodeNum;
             EpisodeNumber.Content = episode.Name;
+            _ = GetServers(episode.Id);
         }
 
         private async Task GetServers(string episodeId)
@@ -66,7 +68,7 @@ namespace Kelompok01.Views
 
         private void OpenVideos(object sender, RoutedEventArgs e)
         {
-            VideosFrame.Navigate(new VideosPage(servers[(int)(sender as Button).Tag], animeId));
+            VideosFrame.Navigate(new VideosPage(servers[(int)(sender as Button).Tag], animeId, episodeNum));
         }
 
     }

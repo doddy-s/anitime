@@ -25,9 +25,13 @@
                             VerticalAlignment="Top">
                     <Button Name="DeleteHistoryButton"
                             Height="80"
+                            Style="{StaticResource WideButtonStyle}"
+                            Content="Delete History"
                             Click="DeleteHistoryButton_Click"/>
                     <Button Name="LogOutButton"
                             Height="80"
+                            Style="{StaticResource WideButtonStyle}"
+                            Content="Log Out"
                             Click="LogOutButton_Click"/>
                 </StackPanel>
             </Grid>

@@ -24,14 +24,14 @@ namespace Kelompok01.Views
     {
         List<Episode> episodes;
         Frame frame;
-        string animeId;
+        AnimeDl.Models.Anime anime;
         public AnimeEpisodesView(AnimeDl.Models.Anime anime, Frame frame)
         {
             InitializeComponent();
             _ = getEpisodes(anime.Id);
             this.frame = frame;
-            this.animeId = anime.Title;
-            AnimeName.Content = animeId;
+            this.anime = anime;
+            AnimeName.Content = anime.Title;
         }
 
         private async Task getEpisodes(string animeId)
@@ -69,7 +69,7 @@ namespace Kelompok01.Views
 
         private void OpenServers(object sender, RoutedEventArgs e)
         {
-            ServerFrame.Navigate(new ServersPage(episodes[(int)(sender as Button).Tag], animeId));
+            ServerFrame.Navigate(new ServersPage(episodes[(int)(sender as Button).Tag], anime.Id, (int)(sender as Button).Tag + 1));
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

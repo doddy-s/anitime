@@ -23,11 +23,13 @@ namespace Kelompok01.Views
     public partial class VideosPage : Page
     {
         string animeId;
+        int episodeNum;
         List<Video> videos;
-        public VideosPage(VideoServer videoServer, string animeId)
+        public VideosPage(VideoServer videoServer, string animeId, int episodeNum)
         {
             InitializeComponent();
             this.animeId = animeId;
+            this.episodeNum = episodeNum;
             ServerName.Content = videoServer.Name;
             _ = GetVideos(videoServer);
         }
@@ -67,7 +69,7 @@ namespace Kelompok01.Views
         private void OpenVideos(object sender, RoutedEventArgs e)
         {
             App.AnimeHistories.RemoveAll(p => p.AnimeId == animeId);
-            App.AnimeHistories.Add(new Models.AnimeHistory(animeId, (int)(sender as Button).Tag + 1));
+            App.AnimeHistories.Add(new Models.AnimeHistory(animeId, episodeNum));
             string vidUrl = "/C mpv " + videos[(int)(sender as Button).Tag].VideoUrl;
             System.Diagnostics.Process.Start("CMD.exe", vidUrl);
         }
