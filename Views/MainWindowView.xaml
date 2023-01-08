@@ -206,7 +206,8 @@
                     </Button>
                 </Grid>
 
-                <Button Grid.Column="1"
+                <Button Name="ProfileButton"
+                        Grid.Column="1"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Width="40" Height="40"

@@ -10,6 +10,8 @@ using System.Windows;
 using System.Windows.Controls;
 using Kelompok01.Models;
 using Kelompok01.API;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Kelompok01
 {
@@ -17,18 +19,26 @@ namespace Kelompok01
     {
         public static Jikan JikanClient = new Jikan();
         public static AnimeClient client = new AnimeClient(AnimeDl.Scrapers.AnimeSites.GogoAnime);
+        public static JsonManager JsonClient = new JsonManager();
         public static List<AnimeHistory> AnimeHistories = new List<AnimeHistory>();
-        public static HistoryManager HistoryManagerClient = new HistoryManager();
+        public static UserProfile UserProfile;
 
         public App()
         {
-            AnimeHistories = HistoryManager.LoadHistory("History.json");
+            AnimeHistories = JsonClient.LoadList<AnimeHistory>("History.json");
+            UserProfile = JsonClient.Load<UserProfile>("UserProfile.json");
         }
 
         ~App()
         {
-            HistoryManager.SaveHistory(AnimeHistories);
+            JsonClient.SaveList(AnimeHistories, "History.Json");
+            App.JsonClient.Save(UserProfile, "UserProfile.json");
         }
 
+        public static void Restart()
+        {
+            Application.Current.Shutdown();
+            System.Diagnostics.Process.Start(Environment.GetCommandLineArgs()[0]);
+        }
     }
 }

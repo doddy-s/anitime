@@ -24,7 +24,7 @@ namespace Kelompok01.Views
         public MainWindowView()
         {
             InitializeComponent();
-
+            SetProfilePhoto();
             userControls.AddRange(new List<UserControl>
             {
                 new HomeView(),
@@ -34,6 +34,23 @@ namespace Kelompok01.Views
             });
 
             MainContent.Content = userControls[0];
+        }
+
+        private void SetProfilePhoto()
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            if (App.UserProfile == null) 
+            {
+                bitmap.UriSource = new Uri("https://cdn.discordapp.com/attachments/1006411248411361370/1061487340633206784/UserName1.png");
+            }
+            else
+            {
+                bitmap.UriSource = new Uri(App.UserProfile.Images.JPG.ImageUrl);
+            }
+            bitmap.EndInit();
+            ProfileButton.Background = new ImageBrush(bitmap);
+
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -68,7 +85,8 @@ namespace Kelompok01.Views
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            UserProfileFrame.Navigate(new LoginView(UserProfileFrame));
+            if (App.UserProfile == null) UserProfileFrame.Navigate(new LoginView(UserProfileFrame));
+            else UserProfileFrame.Navigate(new UserProfileView(App.UserProfile, UserProfileFrame));
         }
 
         private void NavigateMainContent(object sender, RoutedEventArgs e)

@@ -52,6 +52,7 @@ namespace Kelompok01.Views
         {
             var _userProfile = await App.JikanClient.GetUserProfileAsync(username);
             if (_userProfile == null) { return; }
+            App.UserProfile = _userProfile.Data;
             frame.Navigate(new UserProfileView(_userProfile.Data, frame));
         }
     }

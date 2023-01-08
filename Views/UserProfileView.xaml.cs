@@ -1,6 +1,7 @@
 ﻿using JikanDotNet;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace Kelompok01.Views
         {
             InitializeComponent();
             this.frame = frame;
+            frame.Visibility = Visibility.Visible;
             this.userProfile = userProfile;
             SetComponents();
         }
