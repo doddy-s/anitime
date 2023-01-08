@@ -34,6 +34,7 @@ namespace Kelompok01.Views
 
         private async Task FillAnimes()
         {
+            if(App.AnimeHistories.Count == 0) { HistoryLabel.Text = "You never watch anything here."; return; }
             foreach (var i in App.AnimeHistories)
             {
                 var temp = await App.client.GetAnimeInfoAsync(i.AnimeId);
@@ -71,7 +72,7 @@ namespace Kelompok01.Views
         private void OpenAnimeEpisodesView_Click(object sender, RoutedEventArgs e)
         {
             while (HistoryFrame.CanGoBack) HistoryFrame.RemoveBackEntry();
-            HistoryFrame.Navigate(new AnimeEpisodesView(animes[(int)(sender as Button).Tag].Id, HistoryFrame));
+            HistoryFrame.Navigate(new AnimeEpisodesView(animes[(int)(sender as Button).Tag], HistoryFrame));
         }
     }
 }

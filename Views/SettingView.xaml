@@ -22,7 +22,14 @@
             <Grid>
                 <StackPanel x:Name="SettingStackPanel"
                             HorizontalAlignment="Stretch"
-                            VerticalAlignment="Top"/>
+                            VerticalAlignment="Top">
+                    <Button Name="DeleteHistoryButton"
+                            Height="80"
+                            Click="DeleteHistoryButton_Click"/>
+                    <Button Name="LogOutButton"
+                            Height="80"
+                            Click="LogOutButton_Click"/>
+                </StackPanel>
             </Grid>
 
         </ScrollViewer>

@@ -28,8 +28,8 @@ namespace Kelompok01.Views
             userControls.AddRange(new List<UserControl>
             {
                 new HomeView(),
-                null,
-                null,
+                new SearchView(null),
+                new HistoryView(),
                 new SettingView()
             });
 

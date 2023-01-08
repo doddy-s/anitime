@@ -58,6 +58,9 @@
     <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\x64\semi-Release\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo_SD.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnimeDl, Version=1.7.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AnimeDl.1.7.8\lib\net461\AnimeDl.dll</HintPath>
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ServersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\StreamButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +170,10 @@
     <Page Include="Styles\TextBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VideosPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\WideButtonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +222,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AnimeHistory.cs" />
+    <Compile Include="Views\ServersPage.xaml.cs">
+      <DependentUpon>ServersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VideosPage.xaml.cs">
+      <DependentUpon>VideosPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AnimeEpisodesView.xaml.cs">
       <DependentUpon>AnimeEpisodesView.xaml</DependentUpon>
     </Compile>
@@ -268,7 +285,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Logo_SD.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Back.png" />
     <Resource Include="Icons\History.png" />

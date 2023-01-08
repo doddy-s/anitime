@@ -23,17 +23,15 @@ namespace Kelompok01.Views
     public partial class AnimeEpisodesView : Page
     {
         List<Episode> episodes;
-        List<VideoServer> servers;
-        List<Video> videos;
         Frame frame;
         string animeId;
-        public AnimeEpisodesView(string animeId, Frame frame)
+        public AnimeEpisodesView(AnimeDl.Models.Anime anime, Frame frame)
         {
             InitializeComponent();
-            AnimeName.Content = animeId;
-            _ = getEpisodes(animeId);
+            _ = getEpisodes(anime.Id);
             this.frame = frame;
-            this.animeId = animeId;
+            this.animeId = anime.Title;
+            AnimeName.Content = animeId;
         }
 
         private async Task getEpisodes(string animeId)
@@ -62,26 +60,16 @@ namespace Kelompok01.Views
                     Content = "Episode " + Convert.ToString(i + 1),
                     Style = style
                 };
-                button.Click += new RoutedEventHandler(PlayEpisode);
+                button.Click += new RoutedEventHandler(OpenServers);
 
                 grid.Children.Add(button);
                 EpisodesStackPanel.Children.Add(grid);
             }
         }
 
-        private void PlayEpisode(object sender, RoutedEventArgs e)
+        private void OpenServers(object sender, RoutedEventArgs e)
         {
-            App.AnimeHistories.RemoveAll(p => p.AnimeId == animeId);
-            App.AnimeHistories.Add(new Models.AnimeHistory(animeId, (int)(sender as Button).Tag+1));
-            _ = playEpisode(episodes[(int)(sender as Button).Tag]);
-        }
-
-        private async Task playEpisode(Episode episode)
-        {
-            servers = await App.client.GetVideoServersAsync(episode.Id);
-            videos = await App.client.GetVideosAsync(servers[4]);
-            string vidUrl = "/C mpv " + videos[0].VideoUrl;
-            System.Diagnostics.Process.Start("CMD.exe", vidUrl);
+            ServerFrame.Navigate(new ServersPage(episodes[(int)(sender as Button).Tag], animeId));
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

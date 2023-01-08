@@ -23,28 +23,14 @@ namespace Kelompok01.Views
         public SettingView()
         {
             InitializeComponent();
-            ShowSettings();
         }
 
-        string[] settings = {"Hapus Riwayat", "Log Out" };
-
-        private void ShowSettings()
+        private void DeleteHistoryButton_Click(object sender, RoutedEventArgs e)
         {
-            Style style = this.FindResource("WideButtonStyle") as Style;
-            for (int i = 0; i < 2; i++)
-            {
-                Grid grid = new Grid();
-                grid.Height = 60;
+        }
 
-                Button button = new Button();
-                button.HorizontalAlignment = HorizontalAlignment.Stretch;
-                button.Tag = i;
-                button.Content = settings[i];
-                button.Style = style;
-
-                grid.Children.Add(button);
-                SettingStackPanel.Children.Add(grid);
-            }
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

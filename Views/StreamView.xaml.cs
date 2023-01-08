@@ -67,7 +67,7 @@ namespace Kelompok01.Views
 
         private void OpenAnimeEpisodesView_Click(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new AnimeEpisodesView(animes[(int)(sender as Button).Tag].Id, frame));
+            frame.Navigate(new AnimeEpisodesView(animes[(int)(sender as Button).Tag], frame));
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
