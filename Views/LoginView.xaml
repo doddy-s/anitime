@@ -68,11 +68,22 @@
                                Foreground="White"/>
                     </Grid>
                     <Grid Grid.Row="1">
-                        <Label VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                               Content="No Account? Create one"
-                               FontSize="14"
-                               Foreground="White"/>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Visibility="Hidden">
+                            <Label Content="No Account?"
+                                   FontSize="14"
+                                   Foreground="White"/>
+                            <TextBlock FontSize="14"
+                                       Foreground="White"
+                                       VerticalAlignment="Center">
+                                <Hyperlink NavigateUri="https://myanimelist.net/register.php">
+                                    Create one
+                                </Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
+                        
                     </Grid>
                 </Grid>
             </Grid>

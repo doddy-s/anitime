@@ -43,6 +43,9 @@ namespace Kelompok01.Views
             bitmap.UriSource = new Uri(anime.Images.JPG.ImageUrl);
             bitmap.EndInit();
             AnimePic.Background = new ImageBrush(bitmap);
+
+            ScoreValue.Content = anime.Score;
+            RankingValue.Content = anime.Popularity;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
