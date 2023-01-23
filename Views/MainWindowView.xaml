@@ -12,7 +12,8 @@
         WindowStartupLocation="CenterScreen"
         Title="anitime" Height="720" Width="1280"
         Background="#222222"
-        FontFamily="/Fonts/#NTR">
+        FontFamily="/Fonts/#NTR"
+        Icon="/Icons/Logo_SD.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -206,7 +207,8 @@
                     </Button>
                 </Grid>
 
-                <Button Grid.Column="1"
+                <Button Name="ProfileButton"
+                        Grid.Column="1"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Width="40" Height="40"

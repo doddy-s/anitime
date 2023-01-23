@@ -15,9 +15,10 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label Content="History"
-                       FontSize="32"
-                       Foreground="White"/>
+                <TextBlock x:Name="HistoryLabel"
+                           Text="History"
+                           FontSize="32"
+                           Foreground="White"/>
 
                 <WrapPanel Grid.Row="1"
                            VerticalAlignment="Top"

@@ -29,8 +29,9 @@ namespace Kelompok01.Views
         public SearchView(string keyWord)
         {
             InitializeComponent();
+            if (keyWord == null) return;
             _ = FillSearchResult(keyWord);
-            NumAnimeFound.Content = "Search value for " + keyWord;
+            NumAnimeFound.Content = keyWord;
         }
 
         private async Task FillSearchResult(string keyWord)
@@ -43,6 +44,7 @@ namespace Kelompok01.Views
             var _searchResult = await App.JikanClient.SearchAnimeAsync(animeSearchConfig);
             SearchResult = new ObservableCollection<JikanDotNet.Anime>(_searchResult.Data);
             GenerateAnimeTiles();
+            NumAnimeFound.Content = SearchResult.Count.ToString() + " Titles Found For \"" + keyWord + "\"";
         }
 
         private void GenerateAnimeTiles()

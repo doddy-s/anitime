@@ -16,6 +16,7 @@
                 </Grid.RowDefinitions>
 
                 <Label x:Name="NumAnimeFound"
+                       Content="Use textbox above to start searching!"
                        FontSize="32"
                        Foreground="White"/>
 

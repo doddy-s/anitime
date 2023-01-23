@@ -32,9 +32,10 @@
 
 
             <Grid Margin="20"
-                    Background="Transparent"
-                    VerticalAlignment="Stretch"
-                    HorizontalAlignment="Stretch">
+                  Background="Transparent"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.ColumnSpan="1">
                 <Border CornerRadius="16"
                         Background="#4D4D4D">
                     <Grid VerticalAlignment="Stretch">
@@ -101,7 +102,8 @@
 
 
             <Grid Grid.Column="1"
-                  Margin="20">
+                  Margin="20"
+                  Visibility="Collapsed">
                 <StackPanel VerticalAlignment="Top">
                     <Label Content="Statistic"
                             HorizontalAlignment="Left"
