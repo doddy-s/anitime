@@ -1,6 +1,6 @@
 # anitime
 ###### Aplikasi Desktop Streaming Anime.
-###### Dengan [AnimeDl API](https://github.com/jerry08/AnimeDl) dan [jikan.net API](https://github.com/Ervie/jikan.net) (akan di-update nanti).
+###### Dengan [AnimeDl API](https://github.com/jerry08/AnimeDl) dan [jikan.net API](https://github.com/Ervie/jikan.net).
 
 ## Requirement
 * [mpv](https://sourceforge.net/projects/mpv-player-windows/files)
